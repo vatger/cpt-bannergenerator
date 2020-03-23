@@ -1,0 +1,8 @@
+#VATGER Bannergenerator
+#Format:
+#imagenumber:allowedbannertemplates:regionalgroup:airport:stationtype
+#1:1,2:EDFF:EDDS:TWR,APP,CTR:
+#2:2:none:none:TWR,APP,CTR:
+1:1,3:EDFF:EDDS:TWR,APP:
+2:1,2,3:EDFF:EDDF:TWR:
+#ENDOFFILE
