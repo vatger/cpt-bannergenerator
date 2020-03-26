@@ -38,11 +38,10 @@ if ($allparamsset) {
     if ($file = fopen("res/background_img/_index.txt", "r")) {
         while (!feof($file)) {
             $line = fgets($file);
-            $id = substr($line, 0, strpos($line, ":"));
-            if (strcmp($id, $backgroundimageid) == 0) {
+            $line = explode(":", $line);
+            if (strcmp($line[0], $backgroundimageid) == 0) {
                 $backgroundimageid = intval($backgroundimageid);
-                $compatibletemplates = substr($line, strpos($line, ":") + 1,  strpos($line, ":", strpos($line, ":") + 1) - strpos($line, ":")-1);
-                $compatibletemplates = explode(",", $compatibletemplates);
+                $compatibletemplates = explode(",",  $line[1]);
                 $im_background = imagecreatefrompng("res/background_img/".$backgroundimageid.".png");
                 // BANNERTEMPLATE 1
                 if ($bannerstyle == 1 && in_array("1", $compatibletemplates)) {
@@ -122,13 +121,13 @@ if ($allparamsset) {
                 <input type="text" name="sc" maxlength="10" placeholder="EDDF_W_TWR">
                 <br>
                 <label for="sd">stationdescription</label>
-                <input type="text" name="sd" placeholder="Frankfurt Tower">
+                <input type="text" name="sd" maxlength="15" placeholder="Frankfurt Tower">
                 <br>
                 <label for="st">stationtype</label>
                 <input type="text" name="st" maxlength="3" placeholder="TWR">
                 <br>
                 <label for="tn">traineename</label>
-                <input type="text" name="tn" placeholder="Max Mustertrainee">
+                <input type="text" name="tn" maxlength="15" placeholder="Max Mustertrainee">
                 <br>
                 <label for="td">date</label>
                 <input type="text" name="td" maxlength="10" placeholder="00.00.0000">
@@ -139,11 +138,11 @@ if ($allparamsset) {
                 <label for="te">timeend</label>
                 <input type="text" name="te" maxlength="4" placeholder="2000">
                 <br>
-                <label for="bs">bannerstyle</label>
-                <input type="text" name="bs" maxlength="1" placeholder="1-3">
-                <br>
                 <label for="bs">backgroundimg</label>
                 <input type="text" name="bi" maxlength="1" placeholder="1-2">
+                <br>
+                <label for="bs">bannerstyle</label>
+                <input type="text" name="bs" maxlength="1" placeholder="1-3">
                 <br>
             </form>
             <br>
