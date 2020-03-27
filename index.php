@@ -5,7 +5,7 @@ echo "PHP Check: OK";
 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "rotban", "KYNfRWbKbTiMHEJW", "rotban");
+$link = mysqli_connect("localhost", "cpt", "123456789", "cptgen");
 
 // Check connection
 if($link === false){
@@ -14,3 +14,4 @@ if($link === false){
 }else{
     echo "DB Check: OK";
 }
+
