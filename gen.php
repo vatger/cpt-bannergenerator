@@ -38,6 +38,9 @@ foreach ($textlines as $textline) {
     $textline["text"] = str_replace("\$timestarthours", substr($time, 0, 2), $textline["text"]);
     $textline["text"] = str_replace("\$timestartminutes", substr($time, 2, 2), $textline["text"]);
     //...
+
+    var_dump($template);
+    echo "<br><br>";
 }
 
 //create the image, load the colores, load the fonts
