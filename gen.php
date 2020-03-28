@@ -1,6 +1,6 @@
 <?php
 //test 
-echo "version 1829";
+echo "version 2251";
 echo "<br><br>";
 
 require_once("dbinterface.php");
