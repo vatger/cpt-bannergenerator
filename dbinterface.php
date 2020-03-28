@@ -42,13 +42,23 @@ function getTemplate($background_image_id, $template_id)
     $template_id = mysqli_real_escape_string(connect(), $template_id);
     $res = mysqli_query(connect(), "SELECT template.rectangle_id_color, template.logo_x, template.logo_y, template.logo_ressource 
                                     FROM template JOIN template_background ON template.id = template_background.id_template 
-                                    WHERE template_background.id_background LIKE " . $background_image_id);
+                                    WHERE template_background.id_background LIKE " . $background_image_id .
+                                    " AND template.id LIKE ". $template_id);
     if (mysqli_num_rows($res) > 0)
         return mysqli_fetch_array($res);
     else
         return false;
 }
-
+function getTextlines($template_id){
+    $template_id = mysqli_real_escape_string(connect(), $template_id);
+    $res = mysqli_query(connect(), "SELECT fontsize, rotation, position_x, position_y, id_color, id_font, text
+                                    FROM textline JOIN template_textlines ON textline.id = template_textlines.id_textline
+                                    WHERE template_textlines.id_template LIKE " . $template_id);
+    if (mysqli_num_rows($res) > 0)
+        return mysqli_fetch_all($res);
+    else
+        return false;
+}
 
 function getAllColores()
 {
