@@ -30,7 +30,7 @@ function getBackgoundImageContent($background_image_id)
 function getBackgoundImageAttributes($background_image_id)
 {
     $background_image_id = esc_str($background_image_id);
-    return query("SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
+    return query("SELECT id,regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
 }
 
 function getCompatibleTemplateIds($background_image_id)
@@ -51,7 +51,7 @@ function getTemplate($background_image_id, $template_id)
 function getTextlines($template_id)
 {
     $template_id = mysqli_real_escape_string(connect(), $template_id);
-    return query("SELECT fontsize, rotation, position_x, position_y, id_color, id_font, text
+    return query("SELECT id, fontsize, rotation, position_x, position_y, id_color, id_font, text
                     FROM textline JOIN template_textlines ON textline.id = template_textlines.id_textline
                     WHERE template_textlines.id_template LIKE " . $template_id);
 }
