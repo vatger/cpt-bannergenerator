@@ -3,10 +3,10 @@ require_once("dbinterface.php");
 //set the header type to img
 //header("Type: image/png");
 //get & check the _GET params
-$background_image_id = "";
-$template_id = "";
-$traineename = "";
-$time = "";
+$background_image_id = "1";
+$template_id = "1";
+$traineename = "trainee1";
+$time = "19002000";
 
 //get & check the banner template from db
 $backgoundImageAttributes = getBackgoundImageAttributes($background_image_id);
@@ -49,12 +49,20 @@ $fonts = array();
 foreach ($fontdatas as $fontdata) {
     $fonts[$fontdata["id"]] = realpath($fontdata["ressource"]);
 }
-//place the background
+
+//place the background and the colorbar
+//TODO
+imagefilledrectangle($im, 0, 720 - 155, 1280, 720, $colors[$template["rectangle_id_color"]]);
 
 //loop over all textlines and place them in the image
-
+foreach ($textlines as $textline) {
+    ImageTTFText($im, $textline["fontsize"], $textline["rotation"], $textline["position_x"], $textline["position_y"], $colors[$textline["id_color"]], $fonts[$textline["id_font"]], $textline["text"]);
+}
 
 //place the logo on the image
 
 
+
 //done return the image
+imagepng($im);
+imagedestroy($im);
