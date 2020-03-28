@@ -1,4 +1,7 @@
 <?php
+//test 
+echo "version 1620";
+
 require_once("dbinterface.php");
 //set the header type to img
 //header("Type: image/png");
