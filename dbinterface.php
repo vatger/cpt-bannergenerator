@@ -10,6 +10,16 @@ function connect()
         $link = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME);
     return $link;
 }
+function query($qstring){
+    $res = mysqli_query(connect(), $qstring);
+    if (mysqli_num_rows($res) > 0)
+        return mysqli_fetch_array($res);
+    else
+        return false;
+}
+function esc_str($str){
+    return mysqli_real_escape_string(connect(), $str);
+}
 
 function getBackgoundImageContent($background_image_id)
 {
@@ -17,14 +27,8 @@ function getBackgoundImageContent($background_image_id)
 
 function getBackgoundImageAttributes($background_image_id)
 {
-   
-    $background_image_id = mysqli_real_escape_string(connect(), $background_image_id);
-    echo "SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id;
-    $res = mysqli_query(connect(), "SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
-    if (mysqli_num_rows($res) > 0)
-        return mysqli_fetch_array($res);
-    else
-        return false;
+    $background_image_id = esc_str($background_image_id);
+    return query("SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
 }
 
 function getCompatibleTemplateIds($background_image_id)
