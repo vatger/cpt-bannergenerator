@@ -1,6 +1,6 @@
 <?php
 //test 
-echo "version 1730";
+echo "version 1737";
 
 require_once("dbinterface.php");
 //set the header type to img

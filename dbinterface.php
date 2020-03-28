@@ -6,7 +6,7 @@ $link = false;
 function connect()
 {
     global $link;
-    if ($link != false)
+    if ($link == false)
         $link = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME);
     return $link;
 }
