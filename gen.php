@@ -1,6 +1,7 @@
 <?php
 //test 
-echo "version 1748";
+echo "version 1801";
+echo "<br><br>";
 
 require_once("dbinterface.php");
 //set the header type to img
@@ -16,7 +17,7 @@ $backgoundImageAttributes = getBackgoundImageAttributes($background_image_id);
 if ($backgoundImageAttributes == false)
     die("Background image not found");
 var_dump($backgoundImageAttributes);
-echo "<br>";
+echo "<br><br>";
 getBackgoundImageContent($background_image_id); //...
 
 
@@ -25,7 +26,7 @@ $template = getTemplate($background_image_id, $template_id);
 if ($template == false)
     die("Template not found or not compatible");
 var_dump($template);
-echo "<br>";
+echo "<br><br>";
 //get the associated textlines and the logo data
 //      replace the $xyz parts with the data
 $textlines = getTextlines($template_id);
