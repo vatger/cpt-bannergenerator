@@ -62,7 +62,7 @@ function getTemplate($background_image_id, $template_id)
 }
 function getTextlines($template_id)
 {
-    $template_id = mysqli_real_escape_string(connect(), $template_id);
+    $template_id = esc_str($template_id);
     return query_all("SELECT id, fontsize, rotation, position_x, position_y, id_color, id_font, text
                     FROM textline JOIN template_textlines ON textline.id = template_textlines.id_textline
                     WHERE template_textlines.id_template LIKE " . $template_id);
