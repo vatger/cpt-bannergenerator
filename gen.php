@@ -1,7 +1,7 @@
 <?php
 require_once("dbinterface.php");
 //set the header type to img
-header("");
+//header("Type: image/png");
 //get & check the _GET params
 $background_image_id = "";
 $template_id = "";
@@ -32,11 +32,26 @@ foreach ($textlines as $textline) {
     $textline["text"] = str_replace("\$timestartminutes", substr($time, 2, 2), $textline["text"]);
     //...
 }
-//create the image, load the colores, load the fonts
 
+//create the image, load the colores, load the fonts
+$im = imagecreatetruecolor(1280, 720);
+$colordatas = getAllColores();
+if ($colordatas == false)
+    die("");
+$colors = array();
+foreach ($colordatas as $colordata) {
+    $colors[$colordata["id"]] = imagecolorallocate($im, $colordata["R"], $colordata["G"], $colordata["B"]);
+}
+$fontdatas = getAllFonts();
+if ($fontdatas == false)
+    die("");
+$fonts = array();
+foreach ($fontdatas as $fontdata) {
+    $fonts[$fontdata["id"]] = realpath($fontdata["ressource"]);
+}
+//place the background
 
 //loop over all textlines and place them in the image
-//      
 
 
 //place the logo on the image
