@@ -21,6 +21,8 @@ function getBackgoundImageAttributes($background_image_id)
     var_dump($background_image_id);
     echo "<br>";
     $background_image_id = mysqli_real_escape_string(connect(), $background_image_id);
+    var_dump($background_image_id);
+    echo "<br>";
     echo "SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id;
     $res = mysqli_query(connect(), "SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
     echo "<br>";
