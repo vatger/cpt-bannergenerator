@@ -18,8 +18,9 @@ function getBackgoundImageContent($background_image_id)
 function getBackgoundImageAttributes($background_image_id)
 {
     $background_image_id = mysqli_real_escape_string(connect(), $background_image_id);
+    echo "SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id;
     $res = mysqli_query(connect(), "SELECT regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
-
+    var_dump($res);
     if (mysqli_num_rows($res) > 0)
         return mysqli_fetch_array($res);
     else
