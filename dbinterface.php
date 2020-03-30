@@ -21,7 +21,7 @@ function query_array($qstring)
 }
 function query_all($qstring)
 {
-    echo "QUERY: ".$qstring."<br><br>";
+    echo "QUERY: <code>".$qstring."</code><br><br>";
     $res = mysqli_query(connect(), $qstring);
     if (mysqli_num_rows($res) > 0)
         return mysqli_fetch_all($res);
