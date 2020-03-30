@@ -28,6 +28,7 @@ if ($template == false)
 $textlines = getTextlines($template_id);
 if ($textlines == false)
     die("");
+
 foreach ($textlines as $textline) {
     $textline["text"] = str_replace("\$traineename", $traineename, $textline["text"]);
     $textline["text"] = str_replace("\$callsign", $callsign, $textline["text"]);
@@ -35,7 +36,7 @@ foreach ($textlines as $textline) {
     $textline["text"] = str_replace("\$timestartminutes", substr($time, 2, 2), $textline["text"]);
     //...
 }
-var_dump($textline);
+var_dump($textlines);
 
 //create the image, load the colores, load the fonts
 $im = imagecreatetruecolor(1280, 720);
@@ -68,7 +69,7 @@ imagefilledrectangle($im, 0, 720 - 155, 1280, 720, $colors[$template["rectangle_
 
 //loop over all textlines and place them in the image
 foreach ($textlines as $textline) {
-    ImageTTFText($im, $textline["fontsize"], $textline["rotation"], $textline["position_x"], $textline["position_y"], $colors[$textline["id_color"]], $fonts[$textline["id_font"]], $textline["text"]);
+    ImageTTFText($im, intval($textline["fontsize"]),  intval($textline["rotation"]),  intval($textline["position_x"]),  intval($textline["position_y"]), $colors[$textline["id_color"]], $fonts[$textline["id_font"]], $textline["text"]);
 }
 
 //place the logo on the image
