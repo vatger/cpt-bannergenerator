@@ -53,7 +53,7 @@ function getTemplate($background_image_id, $template_id)
 {
     $background_image_id = esc_str($background_image_id);
     $template_id = esc_str($template_id);
-    return query_array("SELECT DESTINCT template.rectangle_id_color, template.logo_x, template.logo_y, template.logo_ressource 
+    return query_array("SELECT template.rectangle_id_color, template.logo_x, template.logo_y, template.logo_ressource 
                     FROM template JOIN template_background ON template.id = template_background.id_template 
                     WHERE template_background.id_background LIKE " . $background_image_id .
         " AND template.id LIKE " . $template_id);
