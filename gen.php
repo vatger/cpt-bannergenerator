@@ -3,7 +3,7 @@
 
 require_once("dbinterface.php");
 //set the header type to img
-//header("Content-type: image/png");
+header("Content-type: image/png");
 //get & check the _GET params
 $background_image_id = "1";
 $template_id = "1";
@@ -47,16 +47,16 @@ foreach ($colordatas as $colordata) {
     echo "<br><br>";
     $colors[$colordata["id"]] = imagecolorallocate($im, $colordata["R"], $colordata["G"], $colordata["B"]);
 }
-var_dump($colors);
-echo "<br><br>";
+//var_dump($colors);
+//echo "<br><br>";
 $fontdatas = getAllFonts();
 if ($fontdatas == false)
     die("No fonts avail");
 $fonts = array();
 
 foreach ($fontdatas as $fontdata) {
-    var_dump($fontdata);
-    echo "<br><br>";
+    //var_dump($fontdata);
+    //echo "<br><br>";
     $fonts[$fontdata["id"]] = realpath($fontdata["ressource"]);
 }
 var_dump($fonts);
