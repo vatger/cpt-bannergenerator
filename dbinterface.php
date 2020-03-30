@@ -15,7 +15,7 @@ function query_row($qstring)
     //echo "QUERY: <code>".$qstring."</code><br><br>";
     $res = mysqli_query(connect(), $qstring);
     if (mysqli_num_rows($res) > 0)
-        return mysqli_fetch_row($res);
+        return mysqli_fetch_assoc($res);
     else
         return false;
 }
@@ -24,7 +24,7 @@ function query_all($qstring)
     //echo "QUERY: <code>".$qstring."</code><br><br>";
     $res = mysqli_query(connect(), $qstring);
     if (mysqli_num_rows($res) > 0)
-        return mysqli_fetch_all($res);
+        return mysqli_fetch_all($res, MYSQLI_ASSOC);
     else
         return false;
 }
