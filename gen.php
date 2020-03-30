@@ -3,7 +3,7 @@
 
 require_once("dbinterface.php");
 //set the header type to img
-//header("Content-type: image/png");
+header("Content-type: image/png");
 //get & check the _GET params
 $background_image_id = "1";
 $template_id = "1";
@@ -27,16 +27,16 @@ if ($template == false)
 //      replace the $xyz parts with the data
 $textlines = getTextlines($template_id);
 if ($textlines == false)
-    die("");
+    die("No textlines");
 
-foreach ($textlines as $textline) {
-    $textline["text"] = str_replace("\$traineename", $traineename, $textline["text"]);
-    $textline["text"] = str_replace("\$callsign", $callsign, $textline["text"]);
-    $textline["text"] = str_replace("\$timestarthours", substr($time, 0, 2), $textline["text"]);
-    $textline["text"] = str_replace("\$timestartminutes", substr($time, 2, 2), $textline["text"]);
+for ($i=0;$i<sizeof($textlines);$i++) {
+    $textlines[$i]["text"] = str_replace("\$traineename", $traineename, $textlines[$i]["text"]);
+    $textlines[$i]["text"] = str_replace("\$callsign", $callsign, $textlines[$i]["text"]);
+    $textlines[$i]["text"] = str_replace("\$timestarthours", substr($time, 0, 2), $textlines[$i]["text"]);
+    $textlines[$i]["text"] = str_replace("\$timestartminutes", substr($time, 2, 2), $textlines[$i]["text"]);
     //...
 }
-var_dump($textlines);
+//var_dump($textlines);
 
 //create the image, load the colores, load the fonts
 $im = imagecreatetruecolor(1280, 720);
