@@ -43,8 +43,8 @@ if ($colordatas == false)
     die("No colors avail");
 $colors = array();
 foreach ($colordatas as $colordata) {
-    var_dump($colordata);
-    echo "<br><br>";
+    //var_dump($colordata);
+    //echo "<br><br>";
     $colors[$colordata["id"]] = imagecolorallocate($im, $colordata["R"], $colordata["G"], $colordata["B"]);
 }
 //var_dump($colors);
@@ -59,8 +59,8 @@ foreach ($fontdatas as $fontdata) {
     //echo "<br><br>";
     $fonts[$fontdata["id"]] = realpath($fontdata["ressource"]);
 }
-var_dump($fonts);
-echo "<br><br>";
+//var_dump($fonts);
+//echo "<br><br>";
 //place the background and the colorbar
 //TODO
 imagefilledrectangle($im, 0, 720 - 155, 1280, 720, $colors[$template["rectangle_id_color"]]);
