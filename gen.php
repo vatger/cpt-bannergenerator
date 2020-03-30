@@ -40,7 +40,7 @@ foreach ($textlines as $textline) {
 
 //create the image, load the colores, load the fonts
 $im = imagecreatetruecolor(1280, 720);
-$colordatas = getAllColores();
+$colordatas = getAllColors();
 if ($colordatas == false)
     die("");
 $colors = array();

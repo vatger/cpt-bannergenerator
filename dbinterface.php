@@ -66,9 +66,9 @@ function getTextlines($template_id)
                     WHERE template_textlines.id_template LIKE " . $template_id);
 }
 
-function getAllColores()
+function getAllColors()
 {
-    return query_all("SELECT id, R, G, B FROM colores");
+    return query_all("SELECT id, R, G, B FROM colors");
 }
 
 function getAllFonts()
