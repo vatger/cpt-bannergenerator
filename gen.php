@@ -16,8 +16,7 @@ $time = "19002000";
 $backgoundImageAttributes = getBackgoundImageAttributes($background_image_id);
 if ($backgoundImageAttributes == false)
     die("Background image not found");
-var_dump($backgoundImageAttributes);
-echo "<br><br>";
+
 getBackgoundImageContent($background_image_id); //...
 
 
@@ -25,8 +24,7 @@ getBackgoundImageContent($background_image_id); //...
 $template = getTemplate($background_image_id, $template_id);
 if ($template == false)
     die("Template not found or not compatible");
-var_dump($template);
-echo "<br><br>";
+
 //get the associated textlines and the logo data
 //      replace the $xyz parts with the data
 $textlines = getTextlines($template_id);
@@ -38,9 +36,6 @@ foreach ($textlines as $textline) {
     $textline["text"] = str_replace("\$timestarthours", substr($time, 0, 2), $textline["text"]);
     $textline["text"] = str_replace("\$timestartminutes", substr($time, 2, 2), $textline["text"]);
     //...
-
-    var_dump($template);
-    echo "<br><br>";
 }
 
 //create the image, load the colores, load the fonts

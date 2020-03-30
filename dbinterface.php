@@ -12,6 +12,7 @@ function connect()
 }
 function query_array($qstring)
 {
+    echo "QUERY: ".$qstring."<br><br>";
     $res = mysqli_query(connect(), $qstring);
     if (mysqli_num_rows($res) > 0)
         return mysqli_fetch_array($res);
@@ -20,6 +21,7 @@ function query_array($qstring)
 }
 function query_all($qstring)
 {
+    echo "QUERY: ".$qstring."<br><br>";
     $res = mysqli_query(connect(), $qstring);
     if (mysqli_num_rows($res) > 0)
         return mysqli_fetch_all($res);
@@ -55,10 +57,6 @@ function getTemplate($background_image_id, $template_id)
                     FROM template JOIN template_background ON template.id = template_background.id_template 
                     WHERE template_background.id_background LIKE " . $background_image_id .
         " AND template.id LIKE " . $template_id);
-    echo "SELECT template.rectangle_id_color, template.logo_x, template.logo_y, template.logo_ressource 
-    FROM template JOIN template_background ON template.id = template_background.id_template 
-    WHERE template_background.id_background LIKE " . $background_image_id .
-" AND template.id LIKE " . $template_id ."<br><br>";
 }
 function getTextlines($template_id)
 {
