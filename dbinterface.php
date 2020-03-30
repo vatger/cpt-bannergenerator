@@ -10,12 +10,12 @@ function connect()
         $link = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME);
     return $link;
 }
-function query_array($qstring)
+function query_row($qstring)
 {
     //echo "QUERY: <code>".$qstring."</code><br><br>";
     $res = mysqli_query(connect(), $qstring);
     if (mysqli_num_rows($res) > 0)
-        return mysqli_fetch_array($res);
+        return mysqli_fetch_row($res);
     else
         return false;
 }
@@ -40,7 +40,7 @@ function getBackgoundImageContent($background_image_id)
 function getBackgoundImageAttributes($background_image_id)
 {
     $background_image_id = esc_str($background_image_id);
-    return query_array("SELECT id,regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
+    return query_row("SELECT id,regional_group, station, airport FROM background_image WHERE id LIKE " . $background_image_id);
 }
 
 function getCompatibleTemplateIds($background_image_id)
@@ -53,7 +53,7 @@ function getTemplate($background_image_id, $template_id)
 {
     $background_image_id = esc_str($background_image_id);
     $template_id = esc_str($template_id);
-    return query_array("SELECT template.rectangle_id_color, template.logo_x, template.logo_y, template.logo_ressource 
+    return query_row("SELECT template.rectangle_id_color, template.logo_x, template.logo_y, template.logo_ressource 
                     FROM template JOIN template_background ON template.id = template_background.id_template 
                     WHERE template_background.id_background LIKE " . $background_image_id .
         " AND template.id LIKE " . $template_id);
