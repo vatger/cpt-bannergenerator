@@ -12,7 +12,7 @@ function connect()
 }
 function query_array($qstring)
 {
-    echo "QUERY: ".$qstring."<br><br>";
+    echo "QUERY: <code>".$qstring."</code><br><br>";
     $res = mysqli_query(connect(), $qstring);
     if (mysqli_num_rows($res) > 0)
         return mysqli_fetch_array($res);
