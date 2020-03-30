@@ -3,7 +3,7 @@
 
 require_once("dbinterface.php");
 //set the header type to img
-header("Type: image/png");
+header("Content-type: image/png");
 //get & check the _GET params
 $background_image_id = "1";
 $template_id = "1";
