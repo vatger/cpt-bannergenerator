@@ -17,13 +17,13 @@
             <label for="sc">stationcallsign</label>
             <input type="text" name="sc" maxlength="10" value="EDDF_W_TWR">
             <br>
-            <label for="sd">stationname</label>
+            <label for="sn">stationname</label>
             <input type="text" name="sn" maxlength="15" value="Frankfurt Tower">
             <br>
             <label for="tn">traineename</label>
             <input type="text" name="tn" maxlength="15" value="Max Mustertrainee">
             <br>
-            <label for="td">date</label>
+            <label for="dt">date</label>
             <input type="text" name="dt" maxlength="10" value="00.00.0000">
             <br>
             <label for="ts">timestart</label>
@@ -32,11 +32,11 @@
             <label for="te">timeend</label>
             <input type="text" name="te" maxlength="4" value="2000">
             <br>
-            <label for="bs">background_image_id</label>
-            <input type="text" name="bg" maxlength="1" value="1">
+            <label for="bg">background_image_id</label>
+            <input type="hidden" name="bg" maxlength="1" value="1">
             <br>
-            <label for="bs">template_id</label>
-            <input type="text" name="tp" maxlength="1" value="1">
+            <label for="tp">template_id</label>
+            <input type="hidden" name="tp" maxlength="1" value="1">
             <br>
         </form>
         <br>
