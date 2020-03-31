@@ -11,7 +11,7 @@
 </head>
 
 <body>
-   
+
     <div>
         <form id="input" action="">
             <label for="sc">stationcallsign</label>
@@ -49,14 +49,16 @@
         <br>
         <img id="preview_img" src="">
     </div>
-
-
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
     <script>
         $(document).ready(function() {
-        $('#button').onclick(function(event) {
-            clicked_preview();
+            $('#button').onclick(function(event) {
+                clicked_preview();
+            });
         });
-      });
+
         function clicked_preview() {
             var data = $("#input").serialize();
             $("#outputlink").html($(location).attr("origin") + "/gen.php?" + data);
