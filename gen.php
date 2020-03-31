@@ -14,7 +14,7 @@ $timestart = urldecode($_GET["ts"]);
 //get & check the banner template from db
 $backgoundImageAttributes = getBackgoundImageAttributes($background_image_id);
 if ($backgoundImageAttributes == false)
-    die("Background attribs image not found");
+    die("Background image attribs not found");
 
 getBackgoundImageContent($background_image_id); //...
 
