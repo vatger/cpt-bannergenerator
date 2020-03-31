@@ -65,8 +65,9 @@ foreach ($fontdatas as $fontdata) {
 $imagecontent = getBackgoundImageContent($background_image_id);
 if ($imagecontent == false)
     die("No background image data");
+
+$im_background = imagecreatefromstring(base64_decode($imagecontent["content"]));
 try {
-    $im_background = imagecreatefromstring(base64_decode($imagecontent["content"]));
 } catch (\Throwable $th) {
     die("Failed to load background image");
 }
@@ -83,5 +84,5 @@ foreach ($textlines as $textline) {
 
 
 //done return the image
-imagepng($im);
+imagepng($im_background);
 imagedestroy($im);
