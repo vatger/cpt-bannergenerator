@@ -41,10 +41,10 @@
             <input type="text" name="te" maxlength="4" value="2000">
             <br>
             <label for="bg">background_image_id</label>
-            <input type="hidden" name="bg" maxlength="1" value="1">
+            <input type="text" readonly name="bg" maxlength="1" value="1">
             <br>
             <label for="tp">template_id</label>
-            <input type="hidden" name="tp" maxlength="1" value="1">
+            <input type="text" readonly name="tp" maxlength="1" value="1">
             <br>
         </form>
         <br>
