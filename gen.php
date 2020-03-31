@@ -3,7 +3,7 @@
 
 require_once("dbinterface.php");
 //set the header type to img
-//header("Content-type: image/png");
+header("Content-type: image/png");
 
 //get & check the _GET params
 $background_image_id = urldecode("1");
@@ -65,10 +65,10 @@ foreach ($fontdatas as $fontdata) {
 $imagecontent = getBackgoundImageContent($background_image_id);
 if ($imagecontent == false)
     die("No background image data");
-var_dump($imagecontent["content"]);
-echo "<br><br><br><br><br><br>";
+//var_dump($imagecontent["content"]);
+//echo "<br><br><br><br><br><br>";
 //var_dump(base64_decode($imagecontent["content"]));
-echo "<br><br><br><br><br><br>";
+//echo "<br><br><br><br><br><br>";
 $im_background = imagecreatefromstring($imagecontent["content"]);
 try {
 } catch (\Throwable $th) {
