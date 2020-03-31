@@ -15,26 +15,26 @@
     <div class="container overflow-auto" style="height: 60vh;">
         <div class="row">
             <div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
+                <img src="https://unsplash.it/300.jpg?image=251" class="img-fluid">
             </div>
             <div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
+                <img src="https://unsplash.it/300.jpg?image=252" class="img-fluid">
             </div>
             <div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
+                <img src="https://unsplash.it/300.jpg?image=253" class="img-fluid">
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid">
+                <img src="https://unsplash.it/300.jpg?image=255" class="img-fluid">
             </div>
             <div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid">
+                <img src="https://unsplash.it/300.jpg?image=256" class="img-fluid">
             </div>
         </div>
     </div>
     <br><br><br><br>
-    <div>
+    <div class="container overflow-auto" style="height: 40vh;">
         <form id="input" action="">
             <label for="sc">stationcallsign</label>
             <input type="text" name="sc" maxlength="10" value="EDDF_W_TWR">
