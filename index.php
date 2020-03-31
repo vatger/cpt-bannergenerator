@@ -12,7 +12,7 @@
     <script>
         function clicked_preview() {
             var data = $("#input").serialize();
-            $("#outputlink").html("gen.php?" + data);
+            $("#outputlink").html($(location).attr("origin") + "gen.php?" + data);
             $("#preview_img").attr("src", "gen.php?" + data);
         }
     </script>
