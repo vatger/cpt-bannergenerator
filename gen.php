@@ -65,16 +65,12 @@ foreach ($fontdatas as $fontdata) {
 $imagecontent = getBackgoundImageContent($background_image_id);
 if ($imagecontent == false)
     die("No background image data");
-//var_dump($imagecontent["content"]);
-//echo "<br><br><br><br><br><br>";
-//var_dump(base64_decode($imagecontent["content"]));
-//echo "<br><br><br><br><br><br>";
-$im_background = imagecreatefromstring($imagecontent["content"]);
 try {
+    $im_background = imagecreatefromstring($imagecontent["content"]);
 } catch (\Throwable $th) {
     die("Failed to load background image");
 }
-
+imagecopymerge($im, $im_background,0,0,0,0,1280,720 - 155,100);
 imagefilledrectangle($im, 0, 720 - 155, 1280, 720, $colors[$template["rectangle_id_color"]]);
 
 //loop over all textlines and place them in the image
@@ -87,5 +83,6 @@ foreach ($textlines as $textline) {
 
 
 //done return the image
-imagepng($im_background);
+imagepng($im);
 imagedestroy($im);
+imagedestroy($im_background);
