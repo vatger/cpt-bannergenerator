@@ -65,7 +65,10 @@ foreach ($fontdatas as $fontdata) {
 $imagecontent = getBackgoundImageContent($background_image_id);
 if ($imagecontent == false)
     die("No background image data");
-
+var_dump($imagecontent["content"]);
+echo "<br><br>";
+var_dump(base64_decode($imagecontent["content"]));
+echo "<br><br>";
 $im_background = imagecreatefromstring(base64_decode($imagecontent["content"]));
 try {
 } catch (\Throwable $th) {
