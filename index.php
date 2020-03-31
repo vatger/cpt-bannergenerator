@@ -54,7 +54,7 @@
     <script src="assets/js/bs-init.js"></script>
     <script>
         $(document).ready(function() {
-            $('#button').onclick(function(event) {
+            $('#button').click(function(event) {
                 clicked_preview();
             });
         });
