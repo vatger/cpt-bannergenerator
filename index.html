@@ -49,7 +49,7 @@
                         <label for="sc">stationcallsign</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="sc" maxlength="10" value="EDDF_W_TWR">
+                        <input class="form-control" type="text" name="sc" maxlength="10" value="EDDF_W_TWR">
                     </div>
                 </div>
                 <div class="row">
@@ -57,7 +57,7 @@
                         <label for="sn">stationname</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="sn" maxlength="15" value="Frankfurt Tower">
+                        <input class="form-control" type="text" name="sn" maxlength="15" value="Frankfurt Tower">
                     </div>
                 </div>
                 <div class="row">
@@ -65,7 +65,7 @@
                         <label for="tn">traineename</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="tn" maxlength="15" value="Max Mustertrainee">
+                        <input class="form-control" type="text" name="tn" maxlength="15" value="Max Mustertrainee">
                     </div>
                 </div>
                 <div class="row">
@@ -73,7 +73,7 @@
                         <label for="dt">date</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="dt" maxlength="10" value="00.00.0000">
+                        <input class="form-control" type="text" name="dt" maxlength="10" value="00.00.0000">
                     </div>
                 </div>
                 <div class="row">
@@ -81,7 +81,7 @@
                         <label for="ts">timestart</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="ts" maxlength="4" value="1900">
+                        <input class="form-control" type="text" name="ts" maxlength="4" value="1900">
                     </div>
                 </div>
                 <div class="row">
@@ -89,7 +89,7 @@
                         <label for="te">timeend</label>
                     </div>
                     <div class="col">
-                        <input type="text" name="te" maxlength="4" value="2000">
+                        <input class="form-control" type="text" name="te" maxlength="4" value="2000">
                     </div>
                 </div>
                 <div class="row">
@@ -97,7 +97,7 @@
                         <label for="bg">background_image_id</label>
                     </div>
                     <div class="col">
-                        <input class="form-control disabled" type="text" readonly name="bg" maxlength="1" value="1">
+                        <input class="form-control" type="text" readonly name="bg" maxlength="1" value="1">
                     </div>
                 </div>
                 <div class="row">
@@ -105,20 +105,18 @@
                         <label for="tp">template_id</label>
                     </div>
                     <div class="col">
-                        <input class="form-control disabled" type="text" readonly name="tp" maxlength="1" value="1">
+                        <input class="form-control" type="text" readonly name="tp" maxlength="1" value="1">
                     </div>
                 </div>
             </form>
-            <br>
-            <br>
-            <button id="button">Preview</button>
+        </div>
+        <button id="button">Preview</button>
             <br>
             <br>
             <code id="outputlink"></code>
             <br>
             <br>
             <img id="preview_img" src="">
-        </div>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bs-init.js"></script>
