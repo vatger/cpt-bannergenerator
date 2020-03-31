@@ -12,6 +12,14 @@
 
 <body>
 
+    <div id="gallery">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg" />
+        <img src="http://mirrors.rit.edu/CTAN/macros/latex/contrib/incgraph/example.jpg" />
+        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/HTML_source_code_example.svg/315px-HTML_source_code_example.svg.png" />
+        <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcQ7F-2LZB83RcmOfsBynfGT5S7k0fNpGrsywIlem1WQGfKca0bp6Q" />
+        <img src="https://pbs.twimg.com/profile_images/447372216133758978/PRwNTMkI.jpeg" />
+    </div>
+    <br><br><br><br>
     <div>
         <form id="input" action="">
             <label for="sc">stationcallsign</label>
@@ -52,19 +60,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#button').click(function(event) {
-                clicked_preview();
-            });
-        });
-
-        function clicked_preview() {
-            var data = $("#input").serialize();
-            $("#outputlink").html($(location).attr("origin") + "/gen.php?" + data);
-            $("#preview_img").attr("src", "gen.php?" + data);
-        }
-    </script>
+    <script src="assets/js/vatgercptbannergenerator.js"></script>
 </body>
 
 </html>
