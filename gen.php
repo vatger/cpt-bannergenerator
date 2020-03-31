@@ -2,14 +2,14 @@
 
 
 require_once("dbinterface.php");
-//set the header type to img
-header("Content-type: image/png");
+
 
 //get & check the _GET params
-$background_image_id = urldecode("1");
-$template_id = "1";
-$traineename = "trainee1";
-$time = "19002000";
+$background_image_id = urldecode($_GET["bg"]);
+$template_id = urldecode($_GET["tp"]);
+$traineename = urldecode($_GET["tn"]);
+$timestart = urldecode($_GET["ts"]);
+
 
 //get & check the banner template from db
 $backgoundImageAttributes = getBackgoundImageAttributes($background_image_id);
@@ -70,7 +70,7 @@ try {
 } catch (\Throwable $th) {
     die("Failed to load background image");
 }
-imagecopymerge($im, $im_background,0,0,0,0,1280,720 - 155,100);
+imagecopymerge($im, $im_background, 0, 0, 0, 0, 1280, 720 - 155, 100);
 imagefilledrectangle($im, 0, 720 - 155, 1280, 720, $colors[$template["rectangle_id_color"]]);
 
 //loop over all textlines and place them in the image
@@ -79,10 +79,14 @@ foreach ($textlines as $textline) {
 }
 
 //place the logo on the image
+$im_logo = imagecreatefrompng($template["logo_ressource"]);
+imagecopymerge($im, $im_logo, intval($template["logo_x"]), intval($template["logo_y"]), 0, 0, imagesx($im_logo), imagesy($im_logo), 100);
 
-
+//set the header type to img
+header("Content-type: image/png");
 
 //done return the image
 imagepng($im);
 imagedestroy($im);
 imagedestroy($im_background);
+imagedestroy($im_logo);
