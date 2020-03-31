@@ -3,13 +3,27 @@
 
 require_once("dbinterface.php");
 
-
 //get & check the _GET params
+$params_valid = true;
 $background_image_id = urldecode($_GET["bg"]);
+if(intval($background_image_id) == 0)
+    $params_valid = false;
 $template_id = urldecode($_GET["tp"]);
+if(intval($template_id) == 0)
+    $params_valid = false;
 $traineename = urldecode($_GET["tn"]);
+$traineename = urldecode($_GET["tn"]);
+$stationcallsign = urldecode($_GET["sc"]);
+$stationname = urldecode($_GET["sn"]);
+$date = urldecode($_GET["dt"]);
 $timestart = urldecode($_GET["ts"]);
-
+if(intval($timestart) == 0)
+    $params_valid = false;
+$timeend = urldecode($_GET["te"]);
+if(intval($timeend) == 0)
+    $params_valid = false;
+if (!$params_valid)
+    die("Wrong params");
 
 //get & check the banner template from db
 $backgoundImageAttributes = getBackgoundImageAttributes($background_image_id);
@@ -35,6 +49,7 @@ for ($i = 0; $i < sizeof($textlines); $i++) {
     $textlines[$i]["text"] = str_replace("\$stationcallsign", $stationcallsign, $textlines[$i]["text"]);
     $textlines[$i]["text"] = str_replace("\$stationname", $stationname, $textlines[$i]["text"]);
     $textlines[$i]["text"] = str_replace("\$stationtype", substr($stationcallsign, sizeof($stationcallsign) - 3, 3), $textlines[$i]["text"]);
+    $textlines[$i]["text"] = str_replace("\$date", $date, $textlines[$i]["text"]);
     $textlines[$i]["text"] = str_replace("\$timestarthours", substr($timestart, 0, 2), $textlines[$i]["text"]);
     $textlines[$i]["text"] = str_replace("\$timestartminutes", substr($timestart, 2, 2), $textlines[$i]["text"]);
     $textlines[$i]["text"] = str_replace("\$timestartfull", $timestart, $textlines[$i]["text"]);
