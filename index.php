@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="container" style="height:60vh">
+    <div class="container overflow-auto" style="height: 60vh;">
         <div class="row">
             <div class="col-md-4">
                 <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
