@@ -13,11 +13,11 @@
 <body>
 
     <div id="gallery">
-        <img src="http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg" />
-        <img src="http://mirrors.rit.edu/CTAN/macros/latex/contrib/incgraph/example.jpg" />
-        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/HTML_source_code_example.svg/315px-HTML_source_code_example.svg.png" />
-        <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcQ7F-2LZB83RcmOfsBynfGT5S7k0fNpGrsywIlem1WQGfKca0bp6Q" />
-        <img src="https://pbs.twimg.com/profile_images/447372216133758978/PRwNTMkI.jpeg" />
+        <img width="200" src="http://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg" />
+        <img width="200" src="http://mirrors.rit.edu/CTAN/macros/latex/contrib/incgraph/example.jpg" />
+        <img width="200" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/HTML_source_code_example.svg/315px-HTML_source_code_example.svg.png" />
+        <img width="200" src="http://t0.gstatic.com/images?q=tbn:ANd9GcQ7F-2LZB83RcmOfsBynfGT5S7k0fNpGrsywIlem1WQGfKca0bp6Q" />
+        <img width="200" src="https://pbs.twimg.com/profile_images/447372216133758978/PRwNTMkI.jpeg" />
     </div>
     <br><br><br><br>
     <div>
