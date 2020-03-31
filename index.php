@@ -5,17 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VATSIM Germany - Bannergenerator</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script>
-        function clicked_preview() {
-            var data = $("#input").serialize();
-            $("#outputlink").html($(location).attr("origin") + "/gen.php?" + data);
-            $("#preview_img").attr("src", "gen.php?" + data);
-        }
-    </script>
+   
     <div>
         <form id="input" action="">
             <label for="sc">stationcallsign</label>
@@ -45,7 +41,7 @@
         </form>
         <br>
         <br>
-        <button onclick="clicked_preview();">Preview</button>
+        <button id="button">Preview</button>
         <br>
         <br>
         <code id="outputlink"></code>
@@ -53,6 +49,20 @@
         <br>
         <img id="preview_img" src="">
     </div>
+
+
+    <script>
+        $(document).ready(function() {
+        $('#button').onclick(function(event) {
+            clicked_preview();
+        });
+      });
+        function clicked_preview() {
+            var data = $("#input").serialize();
+            $("#outputlink").html($(location).attr("origin") + "/gen.php?" + data);
+            $("#preview_img").attr("src", "gen.php?" + data);
+        }
+    </script>
 </body>
 
 </html>
