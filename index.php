@@ -12,24 +12,23 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" style="height:60vh">
         <div class="row">
-        <div class="col-md-4">
+            <div class="col-md-4">
                 <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
-            </div><div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
-            </div><div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
             </div>
             <div class="col-md-4">
-                <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
             </div>
-            
+            <div class="col-md-4">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
+            </div>
         </div>
         <div class="row">
-        <div class="col-md-4">
+            <div class="col-md-4">
                 <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid">
-            </div><div class="col-md-4">
+            </div>
+            <div class="col-md-4">
                 <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid">
             </div>
         </div>
