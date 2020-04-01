@@ -2,14 +2,13 @@
 require_once("dbinterface.php");
 
 $number = urldecode($_GET["number"]);
-$filter_airport = "";
-$filter_station = "";
-$filter_rg = "";
+$filter_airport = "EDDF";
+$filter_station = "TWR";
+$filter_rg = "EDFF";
 
-/**
- * 
- * SELECT * FROM `background_image` 
- * WHERE `airport` LIKE "EDDF" AND `regional_group` LIKE "%EDFF%" 
- * LIMIT 1 OFFSET 0
- * 
- */
+$im_db = getBackgoundImageViaFilter($number, $filter_rg, $filter_station, $filter_airport);
+if ($im_db != false) {
+?>
+    <img src='https://via.placeholder.com/140x100' class='img' data-imageid="<?php echo $im_db["id"]; ?>"></img>
+<?php
+}

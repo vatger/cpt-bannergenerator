@@ -33,6 +33,21 @@ function esc_str($str)
     return mysqli_real_escape_string(connect(), $str);
 }
 
+function getBackgoundImageViaFilter($number, $rg, $station, $airport)
+{
+    $number = esc_str($number);
+    $rg = esc_str($rg);
+    $station = esc_str($station);
+    $airport = esc_str($airport);
+
+    return query_row("SELECT id, content FROM background_image 
+    WHERE  `regional_group` LIKE '%" . $rg . "%'
+    AND `station` LIKE '%" . $station . "%'
+    AND `airport` LIKE '" . $airport . "' 
+    LIMIT 1 OFFSET " . $number);
+}
+
+
 function getBackgoundImageContent($background_image_id)
 {
     $background_image_id = esc_str($background_image_id);

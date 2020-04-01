@@ -7,8 +7,7 @@ for (let i = 0; i < 3; i++) {
     row.appendTo("#background_image_display");
     for (let j = 0; j < 6; j++) {
         var col = $("<div class='col'></div>");
-        var img = $("<img src='https://via.placeholder.com/140x100' class='img'></img>");
-        col.append(img);
+        col.html = $.get("preview.php", { number: ($i * 6 + $j) });
         row.append(col);
     }
 }
