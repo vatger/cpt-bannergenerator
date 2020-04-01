@@ -25,11 +25,11 @@ if (!isset($_GET["number"])) {
     ob_end_clean();
     if ($im_db != false) {
 ?>
-        <img src="data:image/png;base64,<?php echo base64_encode($stringdata); ?>" class='img' data-imageid="<?php echo $im_db["id"]; ?>"></img>
+        <img src="data:image/png;base64,<?php echo base64_encode($stringdata); ?>" class="img img-fluid" data-imageid="<?php echo $im_db["id"]; ?>"></img>
     <?php
     } else {
     ?>
-        <img src='https://via.placeholder.com/150x66' class='img' data-imageid="null"></img>
+        <img src="https://via.placeholder.com/150x66" class="img img-fluid" data-imageid="null"></img>
 <?php
     }
 }
