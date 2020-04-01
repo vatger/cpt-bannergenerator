@@ -16,7 +16,7 @@ if (!isset($_GET["number"])) {
     echo $count;
 } else {
     $number = urldecode($_GET["number"]);
-    sleep(1);
+    //sleep(1);
     $im_db = getBackgoundImageViaFilter($number, $filter_rg, $filter_station, $filter_airport);
     $im = imagescale(imagecreatefromstring($im_db["content"]), 150);
     ob_start();
