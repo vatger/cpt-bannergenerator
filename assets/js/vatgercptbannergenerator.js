@@ -5,13 +5,13 @@ var count;
 $.get("preview.php", {}, function (data) {
     count = parseInt(data);
     if (count == 0) {
-        $("#background_image_display").html = "<div class='row no-gutters align-middle justify-content-center'><span class='badge badge-dark'>No images found</span></div>";
+        $("#background_image_display").html = "<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>";
     } else {
         for (let i = 0; i * 6 < count + 20; i++) {
-            var row = $("<div class='row no-gutters align-middle'></div>");
+            var row = $("<div class='row'></div>");
             row.appendTo("#background_image_display");
             for (let j = 0; j < 6; j++) {
-                var col = $("<div class='col'></div>");
+                var col = $("<div class='col justify-content-center  align-middle'></div>");
                 getPreview(col, i, j);
                 row.append(col);
             }
