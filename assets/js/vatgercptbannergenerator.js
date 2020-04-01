@@ -34,8 +34,8 @@ function addEvents(col) {
         $($(".col")).each(function () {
             $(this).trigger("background_image_selected");
         })
-        col.addClass("border");
-        col.addClass("border-success");
+        col.children("img").addClass("border");
+        col.children("img").addClass("border-success");
     });
 }
 
