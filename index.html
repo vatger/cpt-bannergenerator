@@ -16,11 +16,11 @@
         <div id="background_image_display" class="container overflow-auto" style="height: 40vh;">
             <h2>Unterüberschrift</h2>
         </div>
-        
+
         <div class="container">
             <h2>Unterüberschrift</h2>
             <form id="" action="">
-                
+
             </form>
         </div>
         <div class="container overflow-auto">
@@ -91,9 +91,36 @@
                     </div>
                 </div>
             </form>
+            <button class="button" id="button">Preview</button>
         </div>
+        <div class="modal fade show" role="dialog" tabindex="-1" id="LinkModal"
+            style="padding-right: 17px; display: block;" aria-modal="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-success">Generierung erfolgreich</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p class="text-dark">Dies ist dein generierter Bannerlink.</p>
+                        <input class="" name="gen_url" id="gen_url" readonly>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="copyToClipboard('gen_url')" class="btn btn-primary" type="button">
+                            In Zwischenablage kopieren
+                        </button>
+                        <button class="btn btn-light" type="button" data-dismiss="modal">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="container">
-            <button id="button">Preview</button>
+
             <br>
             <br>
             <code id="outputlink"></code>
