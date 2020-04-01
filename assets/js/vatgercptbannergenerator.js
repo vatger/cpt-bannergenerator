@@ -37,8 +37,9 @@ function addEvents(col) {
             })
             col.children("img").addClass("border");
             col.children("img").addClass("border-success");
+            $("#form_bg").val(parseInt(col.find("img").attr("data-imageid")));
         });
-        
+
     }
 }
 
