@@ -1,11 +1,14 @@
 // VATGER CPT Bannergenerator by Paul Hollmann
 
 //load the predisplay
-var i = 1;
+const count;
 $.when($.get("preview.php", {}, function (data) {
-    col.html(data);
+    $.get("preview.php", { }, function (data) {
+       count = parseInt(data);
+    });
 })).then(function () {
-    for (let i = 0; i < 3; i++) {
+    
+    for (let i = 0; i * 6 < count; i++) {
         var row = $("<div class='row no-gutters'></div>");
         row.appendTo("#background_image_display");
         for (let j = 0; j < 6; j++) {
