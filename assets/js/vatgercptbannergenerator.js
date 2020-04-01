@@ -54,9 +54,6 @@ $("#img_button").click(function () {
     predisplay();
 });
 
-
-img_form
-
 //set the button action
 $("#button").click(function (event) {
     var data = $("#input").serialize();
