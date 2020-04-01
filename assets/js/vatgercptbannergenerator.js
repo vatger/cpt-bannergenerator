@@ -1,6 +1,6 @@
 // VATGER CPT Bannergenerator by Paul Hollmann
 
-//load the predisplay
+//function for the predisplay
 function predisplay() {
     $("#background_image_display").html = "LOADING";
     $.get("preview.php", { rg: "", station: "", airport: "" }, function (data) {
@@ -46,6 +46,14 @@ function predisplay() {
         }
     }
 }
+
+//load the predisplay
+predisplay();
+$("img_button").click(function(){
+    predisplay();
+});
+
+
 
 //set the button action
 $("#button").click(function (event) {
