@@ -2,18 +2,22 @@
 
 //load the predisplay
 var i = 1;
-for (let i = 0; i < 3; i++) {
-    var row = $("<div class='row no-gutters'></div>");
-    row.appendTo("#background_image_display");
-    for (let j = 0; j < 6; j++) {
-        var col = $("<div class='col'></div>");
-        col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-        getPreview(col, i, j);
-        row.append(col);
+$.when($.get("preview.php", {}, function (data) {
+    col.html(data);
+})).then(function () {
+    for (let i = 0; i < 3; i++) {
+        var row = $("<div class='row no-gutters'></div>");
+        row.appendTo("#background_image_display");
+        for (let j = 0; j < 6; j++) {
+            var col = $("<div class='col'></div>");
+            col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
+            getPreview(col, i, j);
+            row.append(col);
+        }
     }
-}
+});
 function getPreview(col, i, j) {
-    $.get("preview.php", { number: (i * 6 + j), imgelem: "show" }, function (data) {
+    $.get("preview.php", { number: (i * 6 + j) }, function (data) {
         col.html(data);
     });
 }

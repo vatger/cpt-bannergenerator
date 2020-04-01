@@ -1,11 +1,19 @@
 <?php
 require_once("dbinterface.php");
-if (isset($_GET["imgelem"])) {
-    $number = urldecode($_GET["number"]);
-    $filter_airport = "EDDF";
-    $filter_station = "TWR";
-    $filter_rg = "EDFF";
 
+
+
+$filter_airport = "EDDF";
+$filter_station = "TWR";
+$filter_rg = "EDFF";
+
+if (!isset($_GET["number"])) {
+    $count = getBackgoundImageCountViaFilter($filter_rg, $filter_station, $filter_airport);
+    if ($count == false)
+        $count = 0;
+    echo $count;
+} else {
+    $number = urldecode($_GET["number"]);
     sleep(1);
     $im_db = getBackgoundImageViaFilter($number, $filter_rg, $filter_station, $filter_airport);
     $im = imagescale(imagecreatefromstring($im_db["content"]), 150);
@@ -22,6 +30,4 @@ if (isset($_GET["imgelem"])) {
         <img src='https://via.placeholder.com/150x66' class='img' data-imageid="null"></img>
 <?php
     }
-}elseif(isset($_GET["getnumber"])){
-
 }

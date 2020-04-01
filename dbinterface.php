@@ -33,6 +33,18 @@ function esc_str($str)
     return mysqli_real_escape_string(connect(), $str);
 }
 
+function getBackgoundImageCountViaFilter($rg, $station, $airport)
+{
+    $rg = esc_str($rg);
+    $station = esc_str($station);
+    $airport = esc_str($airport);
+
+    return query_row("SELECT COUNT (id) FROM background_image 
+    WHERE  `regional_group` LIKE '%" . $rg . "%'
+    AND `station` LIKE '%" . $station . "%'
+    AND `airport` LIKE '" . $airport . "%'");
+}
+
 function getBackgoundImageViaFilter($number, $rg, $station, $airport)
 {
     $number = esc_str($number);
@@ -43,10 +55,9 @@ function getBackgoundImageViaFilter($number, $rg, $station, $airport)
     return query_row("SELECT id, content FROM background_image 
     WHERE  `regional_group` LIKE '%" . $rg . "%'
     AND `station` LIKE '%" . $station . "%'
-    AND `airport` LIKE '" . $airport . "' 
+    AND `airport` LIKE '" . $airport . "%' 
     LIMIT 1 OFFSET " . $number);
 }
-
 
 function getBackgoundImageContent($background_image_id)
 {
