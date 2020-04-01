@@ -20,9 +20,8 @@ $.get("preview.php", {}, function (data) {
                     col.removeClass("border-success");
                 });
                 col.click(function(){
-                    $[$(".col")].each(function(){
+                    $($(".col")).each(function(){
                         $(this).trigger("background_image_selected");
-
                     })
                 });
                 col.addClass("border");
