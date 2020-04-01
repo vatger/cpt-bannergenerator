@@ -2,7 +2,7 @@
 
 //load the predisplay
 var count;
-$.when($.get("preview.php", {}, function (data) {
+$.when($.get("preview.php", {}, function () {
     $.get("preview.php", { }, function (data) {
        count = parseInt(data);
     });
