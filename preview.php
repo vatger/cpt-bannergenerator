@@ -11,4 +11,8 @@ if ($im_db != false) {
 ?>
     <img src='https://via.placeholder.com/140x100' class='img' data-imageid="<?php echo $im_db["id"]; ?>"></img>
 <?php
+} else {
+?>
+    <img src='https://via.placeholder.com/140x100' class='img' data-imageid="null"></img>
+<?php
 }
