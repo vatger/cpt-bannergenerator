@@ -29,6 +29,7 @@ function addEvents(col) {
     col.on("background_image_selected", function () {
         col.children("img").removeClass("border");
         col.children("img").removeClass("border-success");
+        col.children("img").removeClass("img-thumbnail");
     });
     var id = parseInt(col.children("img").attr("data-imageid"));
     if (!isNaN(id) && id > 0) {
