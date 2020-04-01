@@ -14,7 +14,6 @@ $.get("preview.php", {}, function (data) {
                 var col = $("<div class='col'></div>");
                 col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
                 getPreview(col, i, j);
-                addEvents(col);
                 row.append(col);
             }
         }
@@ -23,6 +22,7 @@ $.get("preview.php", {}, function (data) {
 function getPreview(col, i, j) {
     $.get("preview.php", { number: (i * 6 + j) }, function (data) {
         col.html(data);
+        addEvents(col);
     });
 }
 function addEvents(col) {
