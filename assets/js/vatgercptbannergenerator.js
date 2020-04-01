@@ -2,7 +2,7 @@
 
 //function for the predisplay
 function predisplay() {
-    $("#background_image_display").empty();
+    $("#background_image_display").html("<code>Pending</code>");
     $.get("preview.php?" + $("#img_form").serialize(), function (data) {
         var count = parseInt(data);
         if (isNaN(count) || count == 0) {
