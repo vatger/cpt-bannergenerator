@@ -1,6 +1,5 @@
 <?php
 require_once("dbinterface.php");
-sleep(2);
 $filter_rg = urldecode($_GET["rg"]);
 $filter_station = urldecode($_GET["station"]);
 $filter_airport = urldecode($_GET["airport"]);
