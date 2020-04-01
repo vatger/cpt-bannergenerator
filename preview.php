@@ -1,6 +1,6 @@
 <?php
 require_once("dbinterface.php");
-
+sleep(2);
 $filter_rg = urldecode($_GET["rg"]);
 $filter_station = urldecode($_GET["station"]);
 $filter_airport = urldecode($_GET["airport"]);
@@ -14,7 +14,7 @@ if (!isset($_GET["number"])) {
     echo $count;
 } else {
     $number = urldecode($_GET["number"]);
-    //sleep(1);
+    
     $im_db = getBackgoundImageViaFilter($number, $filter_rg, $filter_station, $filter_airport);
     $im = imagescale(imagecreatefromstring($im_db["content"]), 150);
     ob_start();
