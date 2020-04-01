@@ -5,10 +5,10 @@ var count;
 $.get("preview.php", {}, function (data) {
     count = parseInt(data);
     if (count == 0) {
-        $("#background_image_display").html = "<div class='row no-gutters justify-content-center'><span class='badge badge-dark'>No images found</span></div>";
+        $("#background_image_display").html = "<div class='row no-gutters align-middle justify-content-center'><span class='badge badge-dark'>No images found</span></div>";
     } else {
         for (let i = 0; i * 6 < count + 20; i++) {
-            var row = $("<div class='row no-gutters'></div>");
+            var row = $("<div class='row no-gutters align-middle'></div>");
             row.appendTo("#background_image_display");
             for (let j = 0; j < 6; j++) {
                 var col = $("<div class='col'></div>");
@@ -19,7 +19,7 @@ $.get("preview.php", {}, function (data) {
     }
 });
 function getPreview(col, i, j) {
-    col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only align-middle ">Loading...</span></div>');
+    col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
     $.get("preview.php", { number: (i * 6 + j) }, function (data) {
         col.html(data);
         addEvents(col);
