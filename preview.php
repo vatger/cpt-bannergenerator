@@ -1,11 +1,9 @@
 <?php
 require_once("dbinterface.php");
 
-
-
-$filter_airport = "EDDF";
-$filter_station = "TWR";
-$filter_rg = "EDFF";
+$filter_rg = urldecode($_GET["rg"]);
+$filter_station = urldecode($_GET["station"]);
+$filter_airport = urldecode($_GET["airport"]);
 
 if (!isset($_GET["number"])) {
     $count = getBackgoundImageCountViaFilter($filter_rg, $filter_station, $filter_airport);
