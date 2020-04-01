@@ -23,9 +23,10 @@ $.get("preview.php", {}, function (data) {
                     $($(".col")).each(function(){
                         $(this).trigger("background_image_selected");
                     })
+                    col.addClass("border");
+                    col.addClass("border-success");
                 });
-                col.addClass("border");
-                col.addClass("border-success");
+                
             }
         }
     }
