@@ -3,7 +3,7 @@
 //function for the predisplay
 function predisplay() {
     $("#background_image_display").empty();
-    $.get("preview.php", { rg: $("#img_rg").val(), station: $("#img_sta").val(), airport: "" }, function (data) {
+    $.get("preview.php?" + $("#img_form").serialize(), function (data) {
         var count = parseInt(data);
         if (isNaN(count) || count == 0) {
             $("#background_image_display").html = "<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>";
@@ -21,7 +21,7 @@ function predisplay() {
     });
     function getPreview(col, i, j) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-        $.get("preview.php", { number: (i * 6 + j) }, function (data) {
+        $.get("preview.php?number=" + i * 6 + j + "&" + $("#img_form").serialize(), function (data) {
             col.html(data);
             addEvents(col);
         });
@@ -49,11 +49,12 @@ function predisplay() {
 
 //load the predisplay
 predisplay();
-$("#img_button").click(function(){
+$("#img_button").click(function () {
     predisplay();
 });
 
 
+img_form
 
 //set the button action
 $("#button").click(function (event) {
