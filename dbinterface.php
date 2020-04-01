@@ -52,7 +52,7 @@ function getBackgoundImageViaFilter($number, $rg, $station, $airport)
     $station = esc_str($station);
     $airport = esc_str($airport);
 
-    return query_row("SELECT id, content FROM background_image 
+    return query_row("SELECT * FROM background_image 
     WHERE  `regional_group` LIKE '%" . $rg . "%'
     AND `station` LIKE '%" . $station . "%'
     AND `airport` LIKE '" . $airport . "%' 
