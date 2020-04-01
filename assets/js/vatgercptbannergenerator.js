@@ -8,7 +8,7 @@ $.get("preview.php", {}, function (data) {
         $("#background_image_display").html = "<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>";
     } else {
         for (let i = 0; i * 6 < count + 20; i++) {
-            var row = $("<div class='row'></div>");
+            var row = $("<div class='row mt-2'></div>");
             row.appendTo("#background_image_display");
             for (let j = 0; j < 6; j++) {
                 var col = $("<div class='col justify-content-center align-middle'></div>");
