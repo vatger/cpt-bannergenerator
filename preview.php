@@ -19,7 +19,7 @@ if (true) {
     <?php
     } else {
     ?>
-        <img src='https://via.placeholder.com/200x88' class='img' data-imageid="null"></img>
+        <img src='https://via.placeholder.com/150x66' class='img' data-imageid="null"></img>
 <?php
     }
 }
