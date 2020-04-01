@@ -7,7 +7,7 @@ $.get("preview.php", {rg: "", station: "", airport:""}, function (data) {
     if (count == 0) {
         $("#background_image_display").html = "<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>";
     } else {
-        for (let i = 0; i * 6 < count + 20; i++) {
+        for (let i = 0; i * 6 < count; i++) {
             var row = $("<div class='row mt-2'></div>");
             row.appendTo("#background_image_display");
             for (let j = 0; j < 6; j++) {
