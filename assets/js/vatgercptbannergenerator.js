@@ -36,7 +36,7 @@ function addEvents(col) {
             $(".col").each(function () {
                 $(this).trigger("background_image_selected");
             })
-            col.children("img").addClass("border");
+            col.children("img").addClass("border-5");
             col.children("img").addClass("border-success");
             $("#form_bg").val(parseInt(col.children("img").attr("data-imageid")));
         });
