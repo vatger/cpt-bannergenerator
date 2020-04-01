@@ -5,7 +5,7 @@ var count;
 $.get("preview.php", {}, function (data) {
     count = parseInt(data);
     if (count == 0) {
-        $("#background_image_display").html= "<div class='row no-gutters'><span class='badge badge-dark'>No images found</span></div>";
+        $("#background_image_display").html = "<div class='row no-gutters'><span class='badge badge-dark'>No images found</span></div>";
     } else {
         for (let i = 0; i * 6 < count; i++) {
             var row = $("<div class='row no-gutters'></div>");
@@ -14,19 +14,8 @@ $.get("preview.php", {}, function (data) {
                 var col = $("<div class='col'></div>");
                 col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
                 getPreview(col, i, j);
+                addEvents(col);
                 row.append(col);
-                col.on("background_image_selected", function(){
-                    col.removeClass("border");
-                    col.removeClass("border-success");
-                });
-                col.click(function(){
-                    $($(".col")).each(function(){
-                        $(this).trigger("background_image_selected");
-                    })
-                    col.addClass("border");
-                    col.addClass("border-success");
-                });
-                
             }
         }
     }
@@ -34,6 +23,19 @@ $.get("preview.php", {}, function (data) {
 function getPreview(col, i, j) {
     $.get("preview.php", { number: (i * 6 + j) }, function (data) {
         col.html(data);
+    });
+}
+function addEvents(col) {
+    col.on("background_image_selected", function () {
+        col.removeClass("border");
+        col.removeClass("border-success");
+    });
+    col.click(function () {
+        $($(".col")).each(function () {
+            $(this).trigger("background_image_selected");
+        })
+        col.addClass("border");
+        col.addClass("border-success");
     });
 }
 
