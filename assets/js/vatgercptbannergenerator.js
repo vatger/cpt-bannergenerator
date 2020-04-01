@@ -13,7 +13,7 @@ for (let i = 0; i < 3; i++) {
     }
 }
 function getPreview(col, i, j) {
-    $.get("preview.php", { number: (i * 6 + j) }, function (data) {
+    $.get("preview.php", { number: (i * 6 + j), imgelem: "show" }, function (data) {
         col.html(data);
     });
 }
