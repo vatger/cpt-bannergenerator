@@ -8,15 +8,11 @@ for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 6; j++) {
         var col = $("<div class='col'></div>");
         col.html("HELLO")
- 
-        $.get("preview.php", { number: (i * 6 + j) }, function (data) {
-            col.html(data);
-        });
-    
+        getPreview(col, i, j);
         row.append(col);
     }
 }
-function getPreview(col){
+function getPreview(col, i, j) {
     $.get("preview.php", { number: (i * 6 + j) }, function (data) {
         col.html(data);
     });
