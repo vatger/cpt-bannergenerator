@@ -2,9 +2,9 @@
 
 //function for the predisplay
 function predisplay() {
-    $("#background_image_display").empty();
     $.get("preview.php?" + $("#img_form").serialize(), function (data) {
         var count = parseInt(data);
+        $("#background_image_display").empty();
         if (isNaN(count) || count == 0) {
             $("#background_image_display").html("<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>");
         } else {
