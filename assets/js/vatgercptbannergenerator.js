@@ -4,14 +4,18 @@
 var count;
 $.get("preview.php", {}, function (data) {
     count = parseInt(data);
-    for (let i = 0; i * 6 < count; i++) {
-        var row = $("<div class='row no-gutters'></div>");
-        row.appendTo("#background_image_display");
-        for (let j = 0; j < 6; j++) {
-            var col = $("<div class='col'></div>");
-            col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
-            getPreview(col, i, j);
-            row.append(col);
+    if (condition) {
+        $("#background_image_display").html= "<div class='row no-gutters'><span class='badge badge-dark'>No images found</span></div>";
+    } else {
+        for (let i = 0; i * 6 < count; i++) {
+            var row = $("<div class='row no-gutters'></div>");
+            row.appendTo("#background_image_display");
+            for (let j = 0; j < 6; j++) {
+                var col = $("<div class='col'></div>");
+                col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
+                getPreview(col, i, j);
+                row.append(col);
+            }
         }
     }
 });
@@ -20,6 +24,7 @@ function getPreview(col, i, j) {
         col.html(data);
     });
 }
+
 
 //set the button action
 $("#button").click(function (event) {
