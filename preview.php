@@ -5,7 +5,7 @@ $number = urldecode($_GET["number"]);
 $filter_airport = "EDDF";
 $filter_station = "TWR";
 $filter_rg = "EDFF";
-sleep(5);
+sleep(2);
 $im_db = getBackgoundImageViaFilter($number, $filter_rg, $filter_station, $filter_airport);
 
 /*
