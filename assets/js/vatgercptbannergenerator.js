@@ -6,7 +6,7 @@ function predisplay() {
         var count = parseInt(data);
         $("#background_image_display").empty();
         if (isNaN(count) || count == 0) {
-            $("#background_image_display").html("<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>");
+            $("#background_image_display").html("<div class='row align-middle'><div class='col align-items-center align-middle'><span class='badge badge-dark'>No images found</span></div></div>");
         } else {
             for (let i = 0; i * 6 < count; i++) {
                 var row = $("<div class='row mt-2'></div>");
