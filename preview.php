@@ -6,7 +6,7 @@ if (isset($_GET["imgelem"])) {
     $filter_station = "TWR";
     $filter_rg = "EDFF";
 
-    
+    sleep(1);
     $im_db = getBackgoundImageViaFilter($number, $filter_rg, $filter_station, $filter_airport);
     $im = imagescale(imagecreatefromstring($im_db["content"]), 150);
     ob_start();
