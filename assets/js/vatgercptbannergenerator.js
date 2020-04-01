@@ -11,7 +11,7 @@ $.get("preview.php", {}, function (data) {
             var row = $("<div class='row'></div>");
             row.appendTo("#background_image_display");
             for (let j = 0; j < 6; j++) {
-                var col = $("<div class='col justify-content-center  align-middle'></div>");
+                var col = $("<div class='col justify-content-center align-middle'></div>");
                 getPreview(col, i, j);
                 row.append(col);
             }
@@ -19,7 +19,7 @@ $.get("preview.php", {}, function (data) {
     }
 });
 function getPreview(col, i, j) {
-    col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
+    col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
     $.get("preview.php", { number: (i * 6 + j) }, function (data) {
         col.html(data);
         addEvents(col);
