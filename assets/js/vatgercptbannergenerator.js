@@ -4,7 +4,7 @@
 var count;
 $.get("preview.php", {}, function (data) {
     count = parseInt(data);
-    if (condition) {
+    if (count == 0) {
         $("#background_image_display").html= "<div class='row no-gutters'><span class='badge badge-dark'>No images found</span></div>";
     } else {
         for (let i = 0; i * 6 < count; i++) {
