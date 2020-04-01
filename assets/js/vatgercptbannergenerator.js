@@ -2,11 +2,8 @@
 
 //load the predisplay
 var count;
-$.when($.get("preview.php", {}, function () {
-    $.get("preview.php", { }, function (data) {
-       count = parseInt(data);
-    });
-})).then(function () {
+$.get("preview.php", {}, function (data) {
+    count = parseInt(data);
     for (let i = 0; i * 6 < count; i++) {
         var row = $("<div class='row no-gutters'></div>");
         row.appendTo("#background_image_display");
