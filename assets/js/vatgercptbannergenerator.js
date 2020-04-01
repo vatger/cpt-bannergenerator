@@ -27,9 +27,10 @@ function getPreview(col, i, j) {
 }
 function addEvents(col) {
     col.on("background_image_selected", function () {
-        col.removeClass("border");
-        col.removeClass("border-success");
+        col.children("img").removeClass("border");
+        col.children("img").removeClass("border-success");
     });
+    var image_id = col.find("")
     col.click(function () {
         $(".col").each().children("img").each(function () {
             $(this).trigger("background_image_selected");
