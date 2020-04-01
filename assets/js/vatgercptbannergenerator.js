@@ -2,7 +2,7 @@
 
 //load the predisplay
 var count;
-$.get("preview.php", {}, function (data) {
+$.get("preview.php", {rg: "", station: "", airport:""}, function (data) {
     count = parseInt(data);
     if (count == 0) {
         $("#background_image_display").html = "<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>";
