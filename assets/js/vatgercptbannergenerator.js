@@ -21,7 +21,7 @@ function predisplay() {
     });
     function getPreview(col, i, j) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-        $.get("preview.php?number=" + i * 6 + j + "&" + $("#img_form").serialize(), function (data) {
+        $.get("preview.php?number=" + (i * 6 + j) + "&" + $("#img_form").serialize(), function (data) {
             col.html(data);
             addEvents(col);
         });
