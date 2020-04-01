@@ -11,6 +11,8 @@ if (!isset($_GET["number"])) {
     $count = getBackgoundImageCountViaFilter($filter_rg, $filter_station, $filter_airport);
     if ($count == false)
         $count = 0;
+    else
+        $count = $count["COUNT(id)"];
     echo $count;
 } else {
     $number = urldecode($_GET["number"]);
