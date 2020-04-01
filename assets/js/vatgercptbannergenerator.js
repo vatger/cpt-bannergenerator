@@ -7,7 +7,7 @@ for (let i = 0; i < 3; i++) {
     row.appendTo("#background_image_display");
     for (let j = 0; j < 6; j++) {
         var col = $("<div class='col'></div>");
-        col.html("HELLO")
+        col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
         getPreview(col, i, j);
         row.append(col);
     }
