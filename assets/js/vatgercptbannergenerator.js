@@ -11,7 +11,7 @@ $.get("preview.php", {}, function (data) {
             var row = $("<div class='row mt-2'></div>");
             row.appendTo("#background_image_display");
             for (let j = 0; j < 6; j++) {
-                var col = $("<div class='col justify-content-center align-middle'></div>");
+                var col = $("<div class='col align-items-center align-middle'></div>");
                 getPreview(col, i, j);
                 row.append(col);
             }
