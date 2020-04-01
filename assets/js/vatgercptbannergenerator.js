@@ -2,7 +2,7 @@
 
 //function for the predisplay
 function predisplay() {
-    $("#background_image_display").html = "LOADING";
+    $("#background_image_display").empty();
     $.get("preview.php", { rg: $("#img_rg").val(), station: $("#img_sta").val(), airport: "" }, function (data) {
         var count = parseInt(data);
         if (isNaN(count) || count == 0) {
