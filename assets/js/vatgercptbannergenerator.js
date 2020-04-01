@@ -2,7 +2,7 @@
 
 //function for the predisplay
 function predisplay() {
-    $("#background_image_display").html("<code>Pending</code>");
+    $("#background_image_display").empty();
     $.get("preview.php?" + $("#img_form").serialize(), function (data) {
         var count = parseInt(data);
         if (isNaN(count) || count == 0) {
@@ -50,6 +50,7 @@ function predisplay() {
 //load the predisplay
 predisplay();
 $("#img_button").click(function () {
+    $("#background_image_display").html("<code>Pending</code>");
     predisplay();
 });
 
