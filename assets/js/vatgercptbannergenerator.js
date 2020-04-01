@@ -1,10 +1,9 @@
 // VATGER CPT Bannergenerator by Paul Hollmann
 
 //load the predisplay
-var count;
-$.get("preview.php", {rg: "", station: "", airport:""}, function (data) {
-    count = parseInt(data);
-    if (count == 0) {
+$.get("preview.php", { rg: "", station: "", airport: "" }, function (data) {
+    var count = parseInt(data);
+    if (isNaN(count) || count == 0) {
         $("#background_image_display").html = "<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>";
     } else {
         for (let i = 0; i * 6 < count; i++) {
