@@ -31,7 +31,7 @@ function addEvents(col) {
         col.removeClass("border-success");
     });
     col.click(function () {
-        $($(".col")).each(function () {
+        $(".col").each().children("img").each(function () {
             $(this).trigger("background_image_selected");
         })
         col.children("img").addClass("border");
