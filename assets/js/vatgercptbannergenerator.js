@@ -30,15 +30,15 @@ function addEvents(col) {
         col.children("img").removeClass("border");
         col.children("img").removeClass("border-success");
     });
-    alert(parseInt(col.children("img").attr("data-imageid")));
-    if (1 > 0) {
+    var id = parseInt(col.children("img").attr("data-imageid"));
+    if (!isNaN(id) && id > 0) {
         col.click(function () {
             $(".col").each().children("img").each(function () {
                 $(this).trigger("background_image_selected");
             })
             col.children("img").addClass("border");
             col.children("img").addClass("border-success");
-            $("#form_bg").val(parseInt(col.find("img").attr("data-imageid")));
+            $("#form_bg").val(parseInt(col.children("img").attr("data-imageid")));
         });
 
     }
