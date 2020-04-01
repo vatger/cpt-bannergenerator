@@ -30,14 +30,16 @@ function addEvents(col) {
         col.children("img").removeClass("border");
         col.children("img").removeClass("border-success");
     });
-    var image_id = col.find("")
-    col.click(function () {
-        $(".col").each().children("img").each(function () {
-            $(this).trigger("background_image_selected");
-        })
-        col.children("img").addClass("border");
-        col.children("img").addClass("border-success");
-    });
+    if (parseInt(col.find("img").attr("data-imageid")) > 0) {
+        col.click(function () {
+            $(".col").each().children("img").each(function () {
+                $(this).trigger("background_image_selected");
+            })
+            col.children("img").addClass("border");
+            col.children("img").addClass("border-success");
+        });
+        
+    }
 }
 
 
