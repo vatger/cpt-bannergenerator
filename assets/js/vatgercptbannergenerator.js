@@ -15,6 +15,18 @@ $.get("preview.php", {}, function (data) {
                 col.html('<div class="spinner-border" role="status"><span width="150" height="66" class="sr-only">Loading...</span></div>');
                 getPreview(col, i, j);
                 row.append(col);
+                col.on("background_image_selected", function(){
+                    col.removeClass("border");
+                    col.removeClass("border-success");
+                });
+                col.click(function(){
+                    $[$(".col")].each(function(){
+                        $(this).trigger("background_image_selected");
+
+                    })
+                });
+                col.addClass("border");
+                col.addClass("border-success");
             }
         }
     }
