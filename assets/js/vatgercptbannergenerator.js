@@ -33,7 +33,7 @@ function addEvents(col) {
     var id = parseInt(col.children("img").attr("data-imageid"));
     if (!isNaN(id) && id > 0) {
         col.click(function () {
-            $(".col").each().children("img").each(function () {
+            $(".col").each(function () {
                 $(this).trigger("background_image_selected");
             })
             col.children("img").addClass("border");
