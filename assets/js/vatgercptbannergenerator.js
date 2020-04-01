@@ -30,7 +30,7 @@ function addEvents(col) {
         col.children("img").removeClass("border");
         col.children("img").removeClass("border-success");
     });
-    if (parseInt(col.find("img").attr("data-imageid")) > 0) {
+    if (parseInt(col.children("img").attr("data-imageid")) > 0) {
         col.click(function () {
             $(".col").each().children("img").each(function () {
                 $(this).trigger("background_image_selected");
