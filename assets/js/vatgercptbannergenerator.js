@@ -3,7 +3,7 @@
 //function for the predisplay
 function predisplay() {
     $("#background_image_display").html = "LOADING";
-    $.get("preview.php", { rg: "", station: "", airport: "" }, function (data) {
+    $.get("preview.php", { rg: $("#img_rg").val(), station: $("#img_sta").val(), airport: "" }, function (data) {
         var count = parseInt(data);
         if (isNaN(count) || count == 0) {
             $("#background_image_display").html = "<div class='row align-middle'><span class='badge badge-dark'>No images found</span></div>";
@@ -49,7 +49,7 @@ function predisplay() {
 
 //load the predisplay
 predisplay();
-$("img_button").click(function(){
+$("#img_button").click(function(){
     predisplay();
 });
 
