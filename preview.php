@@ -29,7 +29,7 @@ if (!isset($_GET["number"])) {
     <?php
     } else {
     ?>
-        <img src="https://via.placeholder.com/150x66" class="img img-fluid" data-imageid="null"></img>
+        <img src="assets/img/150x66.png" class="img img-fluid" data-imageid="null"></img>
 <?php
     }
 }
