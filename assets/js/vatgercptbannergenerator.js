@@ -30,7 +30,7 @@ function predisplay() {
         });
     }
     function addEvents(col) {
-        
+
         col.on("background_image_selected", function () {
             col.children("img").removeClass("border");
             col.children("img").removeClass("border-success");
@@ -73,4 +73,6 @@ $(document).ready(function () {
     });
 });
 
-
+$(function () {
+    $(document).tooltip();
+});
