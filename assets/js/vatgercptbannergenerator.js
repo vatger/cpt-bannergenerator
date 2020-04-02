@@ -28,7 +28,7 @@ function predisplay() {
     }
     function addEvents(col) {
         //enable tooltips
-        $('[data-toggle="tooltip"]').tooltip();
+        col.children("img").tooltip();
         col.on("background_image_selected", function () {
             col.children("img").removeClass("border");
             col.children("img").removeClass("border-success");
