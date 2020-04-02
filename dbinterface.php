@@ -53,7 +53,7 @@ function getBackgoundImageViaFilter($number, $rg, $station, $airport)
     $station = esc_str($station);
     $airport = esc_str($airport);
 
-    $querystr = "SELECT COUNT(id) FROM background_image 
+    $querystr = "SELECT * FROM background_image 
     WHERE  `regional_group` LIKE '%" . $rg . "%'
     AND `station` LIKE '%" . $station . "%'";
     if (!empty($airport))
