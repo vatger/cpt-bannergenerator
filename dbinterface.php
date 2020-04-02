@@ -33,6 +33,24 @@ function esc_str($str)
     return mysqli_real_escape_string(connect(), $str);
 }
 
+function getTeamplateCountViaFilter( $bannerid)
+{
+    $bannerid = esc_str($bannerid);
+    return query_row("SELECT COUNT(id_template) FROM template_background
+    JOIN template ON template.id LIKE id_template
+    WHERE id_background LIKE '". $bannerid."'");
+}
+
+function getTeamplateViaFilter($number, $bannerid)
+{
+    $number = esc_str($number);
+    $bannerid = esc_str($bannerid);
+    return query_row("SELECT id_template FROM template_background
+    JOIN template ON template.id LIKE id_template
+    WHERE id_background LIKE '". $bannerid."' 
+    LIMIT 1 OFFSET " . $number);
+}
+
 function getBackgoundImageCountViaFilter($rg, $station, $airport)
 {
     $rg = esc_str($rg);
