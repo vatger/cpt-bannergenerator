@@ -54,7 +54,7 @@ function predisplay() {
 //load the predisplay
 predisplay();
 $("#img_button").click(function () {
-    $("#background_image_display").html("<code>Pending</code>");
+    $("#background_image_display").html("<span class='badge badge-dark'>Pending</span>");
     predisplay();
 });
 
