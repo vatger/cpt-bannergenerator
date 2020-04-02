@@ -25,7 +25,7 @@ function predisplay() {
             col.html(data);
             addEvents(col);
             //enable tooltips
-            col.children("img").style("pointer-events: none;");
+            col.children("img").css("pointer-events: none;");
             col.children("img").tooltip();
         });
     }
@@ -71,8 +71,4 @@ $(document).ready(function () {
         //* set the img src from data-src
         $(this).attr("src", $(this).attr("data-lazysrc"));
     });
-});
-
-$(function () {
-    $(document).tooltip();
 });
