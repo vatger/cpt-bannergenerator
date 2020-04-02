@@ -24,11 +24,12 @@ function predisplay() {
         $.get("preview.php?number=" + (i * 6 + j) + "&" + $("#img_form").serialize(), function (data) {
             col.html(data);
             addEvents(col);
+            //enable tooltips
+            col.children("img").tooltip();
         });
     }
     function addEvents(col) {
-        //enable tooltips
-        //col.children("img").tooltip();
+        
         col.on("background_image_selected", function () {
             col.children("img").removeClass("border");
             col.children("img").removeClass("border-success");
