@@ -22,7 +22,7 @@ if (!isset($_GET["number"])) {
     ob_end_clean();
     if ($im_db != false) {
 ?>
-        <img src="data:image/png;base64,<?php echo base64_encode($stringdata); ?>" class="img img-fluid" data-imageid="<?php echo $im_db["id"]; ?>" data-toggle="tooltip" data-placement="left" data-html="true" title="<b>RG</b> <?php echo $im_db["regional_group"]; ?>  <b>Station</b> <?php echo $im_db["station"]; ?> <b>Airport</b> <?php echo $im_db["airport"]; ?>">
+        <img src="data:image/png;base64,<?php echo base64_encode($stringdata); ?>" class="img img-fluid" data-imageid="<?php echo $im_db["id"]; ?>" data-toggle="tooltip" data-placement="left" data-html="true" title="<b>RG</b> <?php echo $im_db["regional_group"]; ?> <br><b>Station</b> <?php echo $im_db["station"]; ?> <br><b>Airport</b> <?php echo $im_db["airport"]; ?>">
         </img>
     <?php
     } else {
