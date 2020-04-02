@@ -69,3 +69,7 @@ $(document).ready(function () {
     });
 });
 
+//enable tooltips
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
