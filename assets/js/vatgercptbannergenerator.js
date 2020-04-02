@@ -64,11 +64,3 @@ $("#button").click(function (event) {
     $("#outputlink").html($(location).attr("origin") + "/gen.php?" + data);
     $("#preview_img").attr("src", "gen.php?" + data);
 });
-
-//lazyload images
-$(document).ready(function () {
-    $("img[data-lazysrc]").each(function () {
-        //* set the img src from data-src
-        $(this).attr("src", $(this).attr("data-lazysrc"));
-    });
-});
