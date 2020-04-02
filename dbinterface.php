@@ -38,11 +38,12 @@ function getBackgoundImageCountViaFilter($rg, $station, $airport)
     $rg = esc_str($rg);
     $station = esc_str($station);
     $airport = esc_str($airport);
-
-    return query_row("SELECT COUNT(id) FROM background_image 
+    $querystr = "SELECT COUNT(id) FROM background_image 
     WHERE  `regional_group` LIKE '%" . $rg . "%'
-    AND `station` LIKE '%" . $station . "%'
-    AND `airport` LIKE '" . $airport . "%'");
+    AND `station` LIKE '%" . $station . "%'";
+    if (!empty($airport))
+        $querystr .= "AND `airport` LIKE '" . $airport . "%'";
+    return query_row($querystr);
 }
 
 function getBackgoundImageViaFilter($number, $rg, $station, $airport)
