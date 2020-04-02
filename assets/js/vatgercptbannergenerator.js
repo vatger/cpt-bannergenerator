@@ -25,7 +25,7 @@ function predisplay() {
             col.html(data);
             addEvents(col);
             //enable tooltips
-            col.children("img").css("pointer-events: none;");
+            col.css("pointer-events: none;");
             col.tooltip({ selector: '[data-toggle=tooltip]' });
         });
     }
