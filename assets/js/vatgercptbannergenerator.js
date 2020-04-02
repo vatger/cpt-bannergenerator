@@ -30,7 +30,6 @@ function predisplay() {
         });
     }
     function addEvents(col) {
-
         col.on("background_image_selected", function () {
             col.children("img").removeClass("border");
             col.children("img").removeClass("border-success");
@@ -39,7 +38,6 @@ function predisplay() {
         var id = parseInt(col.children("img").attr("data-imageid"));
         if (!isNaN(id) && id > 0) {
             col.click(function () {
-                $(".col").each(function () {
                     $(this).trigger("background_image_selected");
                 })
                 col.children("img").addClass("img-thumbnail");
