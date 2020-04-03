@@ -39,10 +39,8 @@ function predisplay() {
         var id = parseInt(col.children("img").attr("data-imageid"));
         if (!isNaN(id) && id > 0) {
             col.click(function () {
-
-                $(".col").each(function () {
-                    $(this).trigger("background_image_selected");
-                });
+                backgroundSelectionTriggerUnselect();
+                templateSelectionTriggerUnselect();
                 col.children("img").addClass("img-thumbnail");
                 col.children("img").addClass("border");
                 col.children("img").addClass("border-success");
@@ -59,6 +57,11 @@ $("#background_img_button").click(function () {
     $("#background_image_display").html("<span class='badge badge-dark'>Pending</span>");
     predisplay();
 });
+function backgroundSelectionTriggerUnselect() {
+    $(".col").each(function () {
+        $(this).trigger("background_image_selected");
+    });
+}
 //################################## END OF SECTION ##########################################
 
 //################################## THE TEMPLATE SELECTION ##################################
@@ -99,9 +102,7 @@ function templatedisplay() {
         var id = parseInt(col.children("img").attr("data-templateid"));
         if (!isNaN(id) && id > 0) {
             col.click(function () {
-                $(".col").each(function () {
-                    $(this).trigger("template_image_selected");
-                });
+                templateSelectionTriggerUnselect();
                 col.children("img").addClass("img-thumbnail");
                 col.children("img").addClass("border");
                 col.children("img").addClass("border-success");
@@ -116,6 +117,11 @@ $("#template_img_button").click(function () {
     $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
     templatedisplay();
 });
+function templateSelectionTriggerUnselect() {
+    $(".col").each(function () {
+        $(this).trigger("template_image_selected");
+    });
+}
 
 //################################## END OF SECTION ##########################################
 
