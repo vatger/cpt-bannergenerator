@@ -40,7 +40,8 @@ function predisplay() {
         if (!isNaN(id) && id > 0) {
             col.click(function () {
                 backgroundSelectionTriggerUnselect();
-                templateSelectionTriggerUnselect();
+                $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
+                templatedisplay();
                 col.children("img").addClass("img-thumbnail");
                 col.children("img").addClass("border");
                 col.children("img").addClass("border-success");
