@@ -20,7 +20,7 @@ if (!isset($_GET["number"])) {
     <?php
     } else {
     ?>
-        <img src="previewgen.php?tp=<?php echo $template["id_template"]; ?>" data-templateid="<?php echo $template["id_template"]; ?>">
+        <img src="templategen.php?tp=<?php echo $template["id_template"]; ?>" data-templateid="<?php echo $template["id_template"]; ?>">
 <?php
     }
 }
