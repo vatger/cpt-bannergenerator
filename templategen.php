@@ -55,6 +55,7 @@ $im = imagescale($im, 150);
 
 //set the header type to img
 header("Content-type: image/png");
+//header("Cache-Control: max-age=" . (60*5) );
 
 //done return the image
 imagepng($im);
