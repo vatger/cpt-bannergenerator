@@ -33,7 +33,7 @@ function esc_str($str)
     return mysqli_real_escape_string(connect(), $str);
 }
 
-function getTeamplateCountViaFilter( $bannerid)
+function getTemplateCountViaFilter($bannerid)
 {
     $bannerid = esc_str($bannerid);
     return query_row("SELECT COUNT(id_template) AS 'count' FROM template_background
@@ -41,7 +41,7 @@ function getTeamplateCountViaFilter( $bannerid)
     WHERE id_background LIKE '". $bannerid."'");
 }
 
-function getTeamplateViaFilter($number, $bannerid)
+function getTemplateViaFilter($number, $bannerid)
 {
     $number = esc_str($number);
     $bannerid = esc_str($bannerid);
