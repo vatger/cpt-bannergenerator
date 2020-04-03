@@ -9,7 +9,7 @@ if (!isset($_GET["number"])) {
     if ($count == false)
         $count = 0;
     else
-        $count = $count["COUNT(id)"];
+        $count = $count["count"];
     echo $count;
 } else {
     $number = urldecode($_GET["number"]);
