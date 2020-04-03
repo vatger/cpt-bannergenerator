@@ -36,7 +36,7 @@ function esc_str($str)
 function getTeamplateCountViaFilter( $bannerid)
 {
     $bannerid = esc_str($bannerid);
-    return query_row("SELECT COUNT(id_template) FROM template_background
+    return query_row("SELECT COUNT(id_template) AS 'count' FROM template_background
     JOIN template ON template.id LIKE id_template
     WHERE id_background LIKE '". $bannerid."'");
 }
@@ -56,7 +56,7 @@ function getBackgoundImageCountViaFilter($rg, $station, $airport)
     $rg = esc_str($rg);
     $station = esc_str($station);
     $airport = esc_str($airport);
-    $querystr = "SELECT COUNT(id) FROM background_image 
+    $querystr = "SELECT COUNT(id) AS 'count' FROM background_image 
     WHERE  `regional_group` LIKE '%" . $rg . "%'
     AND `station` LIKE '%" . $station . "%'";
     if (!empty($airport))
