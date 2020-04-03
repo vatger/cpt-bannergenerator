@@ -50,6 +50,9 @@ foreach ($textlines as $textline) {
 $im_logo = imagecreatefrompng($template["logo_ressource"]);
 imagecopymerge($im, $im_logo, intval($template["logo_x"]), intval($template["logo_y"]), 0, 0, imagesx($im_logo), imagesy($im_logo), 100);
 
+//make image smaller
+$im = imagescale($im, 150);
+
 //set the header type to img
 header("Content-type: image/png");
 
