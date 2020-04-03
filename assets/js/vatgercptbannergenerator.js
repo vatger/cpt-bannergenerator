@@ -62,7 +62,7 @@ $("#background_img_button").click(function () {
 
 //################################## THE TEMPLATE SELECTION ##################################
 function tempaltedisplay() {
-    $.get("template.php?background_id=" + $("#form_bg").value, function (data) {
+    $.get("template.php?background_id=" + $("#form_bg").val(), function (data) {
         var count = parseInt(data);
         $("#template_image_display").empty();
         if (isNaN(count) || count == 0) {
@@ -81,7 +81,7 @@ function tempaltedisplay() {
     });
     function getPreview(col, i, j) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-        $.get("template.php?number=" + (i * 6 + j) + "&background_id=" + $("#form_bg").value, function (data) {
+        $.get("template.php?number=" + (i * 6 + j) + "&background_id=" + $("#form_bg").val(), function (data) {
             col.html(data);
             addEvents(col);
             //enable tooltips
