@@ -61,7 +61,7 @@ $("#background_img_button").click(function () {
 //################################## END OF SECTION ##########################################
 
 //################################## THE TEMPLATE SELECTION ##################################
-function tempaltedisplay() {
+function templatedisplay() {
     $.get("template.php?background_id=" + $("#form_bg").val(), function (data) {
         var count = parseInt(data);
         $("#template_image_display").empty();
@@ -105,7 +105,7 @@ function tempaltedisplay() {
                     col.children("img").addClass("img-thumbnail");
                     col.children("img").addClass("border");
                     col.children("img").addClass("border-success");
-                    $("#form_bg").val(parseInt(col.children("img").attr("data-imageid")));
+                    $("#form_bg").val(parseInt(col.children("img").attr("data-templateid")));
                 });
             });
         }
@@ -114,7 +114,8 @@ function tempaltedisplay() {
 //load the predisplay
 $("#template_img_button").click(function () {
     $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
-    tempaltedisplay();
+    templa
+    templatedisplay();
 });
 //################################## END OF SECTION ##########################################
 
