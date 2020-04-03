@@ -97,15 +97,13 @@ function templatedisplay() {
         var id = parseInt(col.children("img").attr("data-templateid"));
         if (!isNaN(id) && id > 0) {
             col.click(function () {
-                col.click(function () {
-                    $(".col").each(function () {
-                        $(this).trigger("template_image_selected");
-                    });
-                    col.children("img").addClass("img-thumbnail");
-                    col.children("img").addClass("border");
-                    col.children("img").addClass("border-success");
-                    $("#form_tp").val(parseInt(col.children("img").attr("data-templateid")));
+                $(".col").each(function () {
+                    $(this).trigger("template_image_selected");
                 });
+                col.children("img").addClass("img-thumbnail");
+                col.children("img").addClass("border");
+                col.children("img").addClass("border-success");
+                $("#form_tp").val(parseInt(col.children("img").attr("data-templateid")));
             });
         }
     }
