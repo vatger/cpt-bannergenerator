@@ -15,8 +15,12 @@ if (!isset($_GET["number"])) {
     $template = getTemplateViaFilter($number, $filter_bg_id);
 
     if ($template == false) {
-        ?><img src="assets/img/150x66.png" class="img img-fluid" data-imageid="null"></img><?php
+?>
+        <img src="assets/img/150x66.png" class="img img-fluid" data-imageid="null"></img>
+    <?php
     } else {
-        echo "<img src='previewgen.php?tp=".$filter_bg_id."'>";
+    ?>
+        <img src="previewgen.php?tp=<?php echo $template["id"]; ?>" data-templateid="<?php echo $template["id"]; ?>">
+<?php
     }
 }
