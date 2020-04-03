@@ -54,6 +54,8 @@ function predisplay() {
 //load the predisplay
 predisplay();
 $("#background_img_button").click(function () {
+    $("#form_tp").val("---");
+    $("#form_bg").val("---");
     $("#background_image_display").html("<span class='badge badge-dark'>Pending</span>");
     predisplay();
 });
@@ -110,9 +112,11 @@ function templatedisplay() {
 }
 //load the predisplay
 $("#template_img_button").click(function () {
+    $("#form_tp").val("---");
     $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
     templatedisplay();
 });
+
 //################################## END OF SECTION ##########################################
 
 
