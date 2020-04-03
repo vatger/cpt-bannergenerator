@@ -9,6 +9,11 @@ if(intval($template_id) == 0)
 if (!$params_valid)
     die("Wrong params");
 
+//get & check & check compatibility the background_image
+$template = getTemplateNoChecks($template_id);
+if ($template == false)
+    die("Template not found or not compatible");
+
 //get the associated textlines and the logo data
 //      replace the $xyz parts with the data
 $textlines = getTextlines($template_id);
