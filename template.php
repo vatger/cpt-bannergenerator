@@ -14,9 +14,9 @@ if (!isset($_GET["number"])) {
 
     $template = getTeamplateViaFilter($number, $filter_bg_id);
 
-    if ($template != false) {
-        echo "<code>".$template."</code>";
-    } else {
+    if ($template == false) {
         echo "<code><em>false</em></code>";
+    } else {
+        echo "<img src='previewgen.php?tp=".."'>";
     }
 }
