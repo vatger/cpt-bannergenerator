@@ -19,7 +19,9 @@ if (!isset($_GET["number"])) {
         <img src="assets/img/150x66.png" class="img img-fluid" data-imageid="null"></img>
     <?php
     } else {
+        var_dump($template);
     ?>
+        
         <img src="previewgen.php?tp=<?php echo $template["id"]; ?>" data-templateid="<?php echo $template["id"]; ?>">
 <?php
     }
