@@ -81,7 +81,7 @@ function tempaltedisplay() {
     });
     function getPreview(col, i, j) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-        $.get("preview.php?number=" + (i * 6 + j) + "&" + $("#img_form").serialize(), function (data) {
+        $.get("template.php?number=" + (i * 6 + j) + "&" + $("#form_bg").value, function (data) {
             col.html(data);
             addEvents(col);
             //enable tooltips
