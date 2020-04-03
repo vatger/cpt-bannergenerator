@@ -22,7 +22,7 @@ if (!isset($_GET["number"])) {
         var_dump($template);
     ?>
         
-        <img src="previewgen.php?tp=<?php echo $template["id"]; ?>" data-templateid="<?php echo $template["id"]; ?>">
+        <img src="previewgen.php?tp=<?php echo $template["id_template"]; ?>" data-templateid="<?php echo $template["id_template"]; ?>">
 <?php
     }
 }
