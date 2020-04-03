@@ -51,5 +51,4 @@ header("Content-type: image/png");
 //done return the image
 imagepng($im);
 imagedestroy($im);
-imagedestroy($im_background);
 imagedestroy($im_logo);
