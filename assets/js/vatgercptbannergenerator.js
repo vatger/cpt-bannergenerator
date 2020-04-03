@@ -39,14 +39,14 @@ function predisplay() {
         var id = parseInt(col.children("img").attr("data-imageid"));
         if (!isNaN(id) && id > 0) {
             col.click(function () {
-                
-                    $(".col").each(function () {
-                        $(this).trigger("background_image_selected");
-                    });
-                    col.children("img").addClass("img-thumbnail");
-                    col.children("img").addClass("border");
-                    col.children("img").addClass("border-success");
-                    $("#form_bg").val(parseInt(col.children("img").attr("data-imageid")));
+
+                $(".col").each(function () {
+                    $(this).trigger("background_image_selected");
+                });
+                col.children("img").addClass("img-thumbnail");
+                col.children("img").addClass("border");
+                col.children("img").addClass("border-success");
+                $("#form_bg").val(parseInt(col.children("img").attr("data-imageid")));
             });
         }
     }
