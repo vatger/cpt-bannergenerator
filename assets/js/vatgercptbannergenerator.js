@@ -54,7 +54,7 @@ function predisplay() {
 }
 //load the predisplay
 predisplay();
-$("#img_button").click(function () {
+$("#background_img_button").click(function () {
     $("#background_image_display").html("<span class='badge badge-dark'>Pending</span>");
     predisplay();
 });
@@ -112,9 +112,9 @@ function tempaltedisplay() {
     }
 }
 //load the predisplay
-$("#img_button").click(function () {
-    $("#background_image_display").html("<span class='badge badge-dark'>Pending</span>");
-    predisplay();
+$("#template_img_button").click(function () {
+    $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
+    tempaltedisplay();
 });
 //################################## END OF SECTION ##########################################
 
