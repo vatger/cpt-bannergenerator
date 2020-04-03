@@ -39,7 +39,7 @@ function predisplay() {
         var id = parseInt(col.children("img").attr("data-imageid"));
         if (!isNaN(id) && id > 0) {
             col.click(function () {
-                col.click(function () {
+                
                     $(".col").each(function () {
                         $(this).trigger("background_image_selected");
                     });
@@ -47,7 +47,6 @@ function predisplay() {
                     col.children("img").addClass("border");
                     col.children("img").addClass("border-success");
                     $("#form_bg").val(parseInt(col.children("img").attr("data-imageid")));
-                });
             });
         }
     }
@@ -95,7 +94,7 @@ function templatedisplay() {
             col.children("img").removeClass("border-success");
             col.children("img").removeClass("img-thumbnail");
         });
-        var id = parseInt(col.children("img").attr("data-imageid"));
+        var id = parseInt(col.children("img").attr("data-templateid"));
         if (!isNaN(id) && id > 0) {
             col.click(function () {
                 col.click(function () {
@@ -105,7 +104,7 @@ function templatedisplay() {
                     col.children("img").addClass("img-thumbnail");
                     col.children("img").addClass("border");
                     col.children("img").addClass("border-success");
-                    $("#form_bg").val(parseInt(col.children("img").attr("data-templateid")));
+                    $("#form_tp").val(parseInt(col.children("img").attr("data-templateid")));
                 });
             });
         }
@@ -114,7 +113,6 @@ function templatedisplay() {
 //load the predisplay
 $("#template_img_button").click(function () {
     $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
-    templa
     templatedisplay();
 });
 //################################## END OF SECTION ##########################################
