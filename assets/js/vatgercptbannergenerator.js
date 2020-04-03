@@ -62,7 +62,7 @@ $("#background_img_button").click(function () {
 
 //################################## THE TEMPLATE SELECTION ##################################
 function tempaltedisplay() {
-    $.get("preview.php?" + $("#img_form").serialize(), function (data) {
+    $.get("template.php?" + $("#form_bg").value, function (data) {
         var count = parseInt(data);
         $("#template_image_display").empty();
         if (isNaN(count) || count == 0) {
