@@ -110,7 +110,7 @@ function getTemplate($background_image_id, $template_id)
 function getTemplateNoChecks($template_id)
 {
     $template_id = esc_str($template_id);
-    return query_row("SELECT rectangle_id_color, logo_x, logo_y, logo_ressource 
+    return query_row("SELECT id,rectangle_id_color, logo_x, logo_y, logo_ressource 
                     FROM template WHERE id LIKE " . $template_id);
 }
 function getTextlines($template_id)
