@@ -41,11 +41,11 @@ function predisplay() {
             col.click(function () {
                 backgroundSelectionTriggerUnselect();
                 $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
-                templatedisplay();
                 col.children("img").addClass("img-thumbnail");
                 col.children("img").addClass("border");
                 col.children("img").addClass("border-success");
                 $("#form_bg").val(parseInt(col.children("img").attr("data-imageid")));
+                templatedisplay();
             });
         }
     }
