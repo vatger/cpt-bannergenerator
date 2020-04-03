@@ -17,6 +17,6 @@ if (!isset($_GET["number"])) {
     if ($template == false) {
         echo "<code><em>false</em></code>";
     } else {
-        echo "<img src='previewgen.php?tp=".."'>";
+        echo "<img src='previewgen.php?tp=".$filter_bg_id."'>";
     }
 }
