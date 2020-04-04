@@ -10,7 +10,7 @@ function predisplay() {
             $("#background_image_display").html("<div class='container row align-middle'><div class='col-auto align-items-center align-middle'><span class='badge badge-dark'>No images found</span></div></div>");
         } else {
             for (let i = 0; i * 6 < count; i++) {
-                var row = $("<div class='row mt-2'></div>");
+                var row = $("<div data-class='row mt-2'></div>");
                 row.appendTo("#background_image_display");
                 for (let j = 0; j < 6; j++) {
                     var col = $("<div class='col-auto align-items-center align-middle'></div>");
