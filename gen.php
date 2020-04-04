@@ -30,7 +30,7 @@ $backgoundImageAttributes = getBackgoundImageAttributes($background_image_id);
 if ($backgoundImageAttributes == false)
     die("Background image attribs not found");
 
-getBackgoundImageContent($background_image_id); //...
+//getBackgoundImageContent($background_image_id); //...
 
 
 //get & check & check compatibility the background_image
