@@ -21,6 +21,9 @@ function predisplay() {
                 });
 
                 $(this).click(function () {
+                    $("#background_image_display").children("div").each(function () {
+                        $(this).trigger("background_image_selected");
+                    });
                     $(this).children("img").addClass("img-thumbnail");
                     $(this).children("img").addClass("border");
                     $(this).children("img").addClass("border-success");
