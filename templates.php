@@ -12,6 +12,7 @@ if ($templates == false) {
 } else {
     foreach ($templates as $template) {
         $id = $template["template_id"];
+        var_dump($template);
     ?>
         <div class="col-auto">
             <img alt="IMAGE" data-lazysrc="templategen.php?bg=<?php echo $id ?>" class="img-fluid mx-auto d-block" data-templateid="<?php echo $id ?>">
