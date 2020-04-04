@@ -6,9 +6,11 @@ function predisplay() {
     $.get("backgrounds.php?" + $("#img_form").serialize(), function (data) {
         $("#background_image_display").empty();
         $("#background_image_display").html(data);
+
+        $("#background_image_display").children("img").each(function(){
+            $( this ).src($(this).attr("data-lazysrc"));
+        });
     });
-
-
     function getPreview(col, i) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
         $.get("preview.php?number=" + i + "&" + $("#img_form").serialize(), function (data) {
