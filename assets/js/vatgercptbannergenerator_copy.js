@@ -8,10 +8,10 @@ function predisplay() {
         $("#background_image_display").html(data);
 
         $("#background_image_display").children("img").each(function(){
-            $( this ).attr("src", $(this).attr("data-lazysrc")).removeAttr("data-lazysrc");
+            console.log(this);
         });
     });
-    
+
     function getPreview(col, i) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
         $.get("preview.php?number=" + i + "&" + $("#img_form").serialize(), function (data) {
