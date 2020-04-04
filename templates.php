@@ -14,7 +14,7 @@ if ($templates == false) {
         $id = $template["id_template"];
     ?>
         <div class="col-auto">
-            <img alt="IMAGE" data-lazysrc="templategen.php?bg=<?php echo $id;?>" class="img-fluid mx-auto d-block" data-templateid="<?php echo $id ?>">
+            <img alt="IMAGE" data-lazysrc="templategen.php?tp=<?php echo $id;?>" class="img-fluid mx-auto d-block" data-templateid="<?php echo $id ?>">
             </img>
         </div>
 <?php
