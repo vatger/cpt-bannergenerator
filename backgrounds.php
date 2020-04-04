@@ -13,7 +13,6 @@ if ($background_datas == false) {
 <?php
 }
 else{
-    var_dump($background_datas);
     foreach ($background_datas as $background_data){
         ?>
         <div class="col-auto">
