@@ -16,7 +16,7 @@ else{
     foreach ($background_datas as $background_data){
         ?>
         <div class="col-auto">
-            <img src="assets/img/150x66.png" class="img-fluid mx-auto d-block" data-imageid="NULL">
+            <img data-lazysrc="assets/img/150x66.png" class="img-fluid mx-auto d-block" data-imageid="NULL">
         </div>
         <?php
     }
