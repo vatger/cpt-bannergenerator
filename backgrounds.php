@@ -13,14 +13,18 @@ if ($background_datas == false) {
     <?php
 } else {
     foreach ($background_datas as $background_data) {
+        $id = $background_data["id"];
+        $rg = $background_data["rg"];
+        $station = $background_data["station"];
+        $airport = $background_data["airport"];
     ?>
         <div class="col-auto">
-            <img src="backgroundgen.php?bg=<?php echo $background_data["id"] ?>" class="img-fluid mx-auto d-block" data-imageid="<?php echo $background_data["id"]; ?>" data-toggle="tooltip" data-placement="left" data-html="true" title="<b>RG</b> <?php echo $background_data["regional_group"]; ?> <br><b>Station</b> <?php echo $background_data["station"]; ?> <br><b>Airport</b> 
+            <img src="backgroundgen.php?bg=<?php echo $background_data["id"] ?>" class="img-fluid mx-auto d-block" data-imageid="<?php echo $id ?>" data-toggle="tooltip" data-placement="left" data-html="true" title="<b>RG</b> <?php echo $background_data["regional_group"]; ?> <br><b>Station</b> <?php echo $station; ?> <br><b>Airport</b> 
               <?php
-                if (empty($background_data["airport"]))
+                if (empty($airport))
                     echo "<em>N/A</em>";
                 else
-                    echo $background_data["airport"];
+                    echo $airport;
                 ?><br><em>Zum Auswählen: <wbr>Bild klicken</em>">
             </img>
         </div>
