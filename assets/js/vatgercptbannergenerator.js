@@ -7,13 +7,13 @@ function predisplay() {
         var count = parseInt(data);
         $("#background_image_display").empty();
         if (isNaN(count) || count == 0) {
-            $("#background_image_display").html("<div class='container row align-middle'><div class='col align-items-center align-middle'><span class='badge badge-dark'>No images found</span></div></div>");
+            $("#background_image_display").html("<div class='container row align-middle'><div class='col-auto align-items-center align-middle'><span class='badge badge-dark'>No images found</span></div></div>");
         } else {
             for (let i = 0; i * 6 < count; i++) {
                 var row = $("<div class='row mt-2'></div>");
                 row.appendTo("#background_image_display");
                 for (let j = 0; j < 6; j++) {
-                    var col = $("<div class='col align-items-center align-middle'></div>");
+                    var col = $("<div class='col-auto align-items-center align-middle'></div>");
                     getPreview(col, i, j);
                     row.append(col);
                 }
@@ -60,7 +60,7 @@ $("#background_img_button").click(function () {
     predisplay();
 });
 function backgroundSelectionTriggerUnselect() {
-    $(".col").each(function () {
+    $(".col-auto").each(function () {
         $(this).trigger("background_image_selected");
     });
 }
