@@ -74,9 +74,6 @@ function templatedisplay() {
         });
     });
 }
-$("#template_img_button").click(function () {
-    templatedisplay();
-});
 //################################## END OF SECTION ##########################################
 
 //set the button action
