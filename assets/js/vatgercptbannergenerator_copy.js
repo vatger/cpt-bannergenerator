@@ -8,7 +8,7 @@ function predisplay() {
         $("#background_image_display").html(data);
 
         $("#background_image_display").children("img").each(function(){
-            $( this ).src($(this).attr("data-lazysrc"));
+            $( this ).attr("src", $(this).attr("data-lazysrc")).removeAttr("data-lazysrc");
         });
     });
     function getPreview(col, i) {
