@@ -7,8 +7,8 @@ function predisplay() {
         $("#background_image_display").empty();
         $("#background_image_display").html(data);
 
-        $("#background_image_display").children("img").each(function(){
-            console.log(this);
+        $("#background_image_display").find("img").each(function () {
+            $(this).attr("src", $(this).attr("data-lazysrc")).removeAttr("data-lazysrc");
         });
     });
 
