@@ -1,4 +1,4 @@
-<<?php
+<?php
 require_once("dbinterface.php");
 
 //get & check the _GET params
@@ -19,7 +19,7 @@ try {
     die("Failed to load background image");
 }
 //set the header type to img
-//header("Content-type: image/png");
+header("Content-type: image/png");
 //done return the image
 imagepng($im_background);
 imagedestroy($im_background);
