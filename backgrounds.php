@@ -23,9 +23,6 @@ if ($background_datas == false) {
                     echo $background_data["airport"];
                 ?><br><em>Zum Auswählen: <wbr>Bild klicken</em>">
             </img>
-
-
-            >
         </div>
 <?php
     }
