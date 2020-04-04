@@ -20,6 +20,7 @@ try {
 }
 //set the header type to img
 header("Content-type: image/png");
+header("Cache-Control: max-age=" . (60 * 60));
 //done return the image
 imagepng($im_background);
 imagedestroy($im_background);
