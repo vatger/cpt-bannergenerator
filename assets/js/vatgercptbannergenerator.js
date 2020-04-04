@@ -11,18 +11,16 @@ function predisplay() {
         } else {
             var row = $("<div class='row mt-2'></div>");
             row.appendTo("#background_image_display");
-            for (let i = 0; i * 6 < count+100; i++) {
-                for (let j = 0; j < 6; j++) {
-                    var col = $("<div class='col-auto align-items-center align-middle'></div>");
-                    getPreview(col, i, j);
-                    row.append(col);
-                }
+            for (let i = 0; i < count; i++) {
+                var col = $("<div class='col-auto align-items-center align-middle'></div>");
+                getPreview(col, i);
+                row.append(col);
             }
         }
     });
-    function getPreview(col, i, j) {
+    function getPreview(col, i) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-        $.get("preview.php?number=" + (i * 6 + j) + "&" + $("#img_form").serialize(), function (data) {
+        $.get("preview.php?number=" + i + "&" + $("#img_form").serialize(), function (data) {
             col.html(data);
             addEvents(col);
             //enable tooltips
@@ -74,20 +72,18 @@ function templatedisplay() {
         if (isNaN(count) || count == 0) {
             $("#template_image_display").html("<div class='container row align-middle'><div class='col align-items-center align-middle'><span class='badge badge-dark'>No fitting templates found</span></div></div>");
         } else {
-            for (let i = 0; i * 6 < count; i++) {
-                var row = $("<div class='row mt-2'></div>");
-                row.appendTo("#template_image_display");
-                for (let j = 0; j < 6; j++) {
-                    var col = $("<div class='col align-items-center align-middle'></div>");
-                    getPreview(col, i, j);
-                    row.append(col);
-                }
+            var row = $("<div class='row mt-2'></div>");
+            row.appendTo("#template_image_display");
+            for (let i = 0; i < count; i++) {
+                var col = $("<div class='col-auto align-items-center align-middle'></div>");
+                getPreview(col, i);
+                row.append(col);
             }
         }
     });
-    function getPreview(col, i, j) {
+    function getPreview(col, i) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-        $.get("template.php?number=" + (i * 6 + j) + "&background_id=" + $("#form_bg").val(), function (data) {
+        $.get("template.php?number=" + i + "&background_id=" + $("#form_bg").val(), function (data) {
             col.html(data);
             addEvents(col);
             //enable tooltips
@@ -120,7 +116,7 @@ $("#template_img_button").click(function () {
     templatedisplay();
 });
 function templateSelectionTriggerUnselect() {
-    $(".col").each(function () {
+    $(".col-auto").each(function () {
         $(this).trigger("template_image_selected");
     });
 }
