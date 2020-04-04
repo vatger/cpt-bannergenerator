@@ -1,6 +1,6 @@
 <?php
 require_once("dbinterface.php");
-$filter_backgroundimage = urldecode($_GET["rg"]);
+$filter_backgroundimage = urldecode($_GET["background_id"]);
 
 $templates = getCompatibleTemplateIds($filter_backgroundimage);
 if ($templates == false) {
