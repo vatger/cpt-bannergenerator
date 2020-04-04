@@ -6,7 +6,7 @@ $templates = getCompatibleTemplateIds($filter_backgroundimage);
 if ($templates == false) {
 ?>
     <div class="col-auto align-items-center align-middle">
-        <span class="badge badge-dark">No images found</span>
+        <span class="badge badge-dark">No tempates found</span>
     </div>
     <?php
 } else {
