@@ -3,6 +3,8 @@
 //################################## THE IMAGE PREDISPLAY ####################################
 //function for the predisplay
 function predisplay() {
+    $("#form_tp").val("---");
+    $("#form_bg").val("---");
     $.get("backgrounds.php?" + $("#img_form").serialize(), function (data) {
         $("#background_image_display").empty();
         $("#background_image_display").html(data);
@@ -39,17 +41,8 @@ function predisplay() {
 //load the predisplay
 predisplay();
 $("#background_img_button").click(function () {
-    $("#form_tp").val("---");
-    $("#form_bg").val("---");
-    $("#background_image_display").html("<span class='badge badge-dark'>Pending</span>");
-    $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
     predisplay();
 });
-function backgroundSelectionTriggerUnselect() {
-    $(".col-auto").each(function () {
-        $(this).trigger("background_image_selected");
-    });
-}
 //################################## END OF SECTION ##########################################
 
 //################################## THE TEMPLATE SELECTION ##################################
