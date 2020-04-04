@@ -18,7 +18,7 @@ if ($background_datas == false) {
         $station = $background_data["station"];
         $airport = $background_data["airport"];
     ?>
-        <div class="col-auto">
+        <div class="col-auto mt-1 mb-1">
             <img alt="IMAGE" data-lazysrc="backgroundgen.php?bg=<?php echo $background_data["id"] ?>" class="img-fluid mx-auto d-block" data-imageid="<?php echo $id ?>" data-toggle="tooltip" data-placement="left" data-html="true" title="<b>RG</b> <?php echo $background_data["regional_group"]; ?> <br><b>Station</b> <?php echo $station; ?> <br><b>Airport</b> 
               <?php
                 if (empty($airport))
