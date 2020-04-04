@@ -4,7 +4,7 @@ require_once("dbinterface.php");
 //get & check the _GET params
 $params_valid = true;
 $template_id = urldecode($_GET["tp"]);
-if(intval($template_id) == 0)
+if (intval($template_id) == 0)
     $params_valid = false;
 if (!$params_valid)
     die("Wrong params");
@@ -22,11 +22,11 @@ if ($textlines == false)
 
 //create the image, load the colores, load the fonts
 $im = imagecreatetruecolor(1280, 720);
+imagefilledrectangle($im, 0, 0, 1280, 720 - 155, imagecolorallocate($im, 100, 100, 100));
 $colordatas = getAllColors();
 if ($colordatas == false)
     die("No colors avail");
 $colors = array();
-imagecolorallocate($im, 100, 100, 100);
 foreach ($colordatas as $colordata) {
     $colors[$colordata["id"]] = imagecolorallocate($im, intval($colordata["R"]), intval($colordata["G"]), intval($colordata["B"]));
 }
