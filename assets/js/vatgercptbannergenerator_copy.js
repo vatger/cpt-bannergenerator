@@ -11,6 +11,7 @@ function predisplay() {
             $( this ).attr("src", $(this).attr("data-lazysrc")).removeAttr("data-lazysrc");
         });
     });
+    
     function getPreview(col, i) {
         col.html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
         $.get("preview.php?number=" + i + "&" + $("#img_form").serialize(), function (data) {
