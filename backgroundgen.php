@@ -18,6 +18,9 @@ try {
 } catch (\Throwable $th) {
     die("Failed to load background image");
 }
+//make image smaller
+$im_background = imagescale($im_background, 400);
+
 //set the header type to img
 header("Content-type: image/png");
 header("Cache-Control: max-age=" . (60 * 60));
