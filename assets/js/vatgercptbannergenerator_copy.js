@@ -38,6 +38,7 @@ function predisplay() {
 predisplay();
 $("#background_img_button").click(function () {
     predisplay();
+    templatedisplay();
 });
 //################################## END OF SECTION ##########################################
 
