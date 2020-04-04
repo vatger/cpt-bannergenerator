@@ -56,6 +56,7 @@ $("#background_img_button").click(function () {
     $("#form_tp").val("---");
     $("#form_bg").val("---");
     $("#background_image_display").html("<span class='badge badge-dark'>Pending</span>");
+    $("#template_image_display").html("<span class='badge badge-dark'>Pending</span>");
     predisplay();
 });
 function backgroundSelectionTriggerUnselect() {
