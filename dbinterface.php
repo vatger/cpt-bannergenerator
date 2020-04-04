@@ -61,7 +61,7 @@ function getBackgoundImageDataViaFilter($rg, $station, $airport)
     AND `station` LIKE '%" . $station . "%'";
     if (!empty($airport))
         $querystr .= "AND `airport` LIKE '" . $airport . "%' ";
-    return query_row($querystr);
+    return query_all($querystr);
 }
 
 function getBackgoundImageContent($background_image_id)
