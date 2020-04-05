@@ -60,7 +60,7 @@ function templatedisplay() {
                     $(this).children("img").removeClass("img-thumbnail");
                 });
                 $(this).click(function () {
-                    $("#background_image_display").children("div").each(function () {
+                    $("#template_image_display").children("div").each(function () {
                         $(this).trigger("template_image_selected");
                     });
                     $(this).children("img").addClass("img-thumbnail");
