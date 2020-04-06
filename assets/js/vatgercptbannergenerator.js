@@ -78,7 +78,7 @@ function templatedisplay() {
 }
 //################################## END OF SECTION ##########################################
 
-//################################## THE TEMPLATE SELECTION ##################################
+//################################## THE MODAL SELECTION ##################################
 //set the button action
 $(document).ready(function () {
     $("#button").click(function (event) {
@@ -92,8 +92,6 @@ function copyToClipboard(elementId) {
     copyText.select();
     copyText.setSelectionRange(0, 99999); /*For mobile devices*/
     document.execCommand("copy");
-
 }
-
 //################################## END OF SECTION ##########################################
 
