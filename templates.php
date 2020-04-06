@@ -5,8 +5,8 @@ $filter_backgroundimage = urldecode($_GET["background_id"]);
 $templates = getCompatibleTemplateIds($filter_backgroundimage);
 if ($templates == false) {
 ?>
-    <div class="col-auto align-items-center align-middle">
-        <span class="badge badge-dark">No tempates found</span>
+    <div class="col-auto">
+        <span class="badge badge-dark">Keine Vorlagen passen zum Hintergrundbild</span>
     </div>
     <?php
 } else {
