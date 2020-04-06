@@ -93,7 +93,7 @@ $(document).ready(function () {
             var data = $("#input").serialize();
             $("#outputlink").val($(location).attr("origin") + "/gen.php?" + data);
             $("#preview_img").attr("src", "gen.php?" + data);
-
+            $("#image_result").modal();
         }
     });
 });
