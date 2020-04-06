@@ -149,7 +149,7 @@
         <div class="container">
             <!-- Button to Open the Modal -->
             <button id="button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Open modal
+                Banner anzeigen
             </button>
             <!-- The Modal -->
             <div class="modal" id="myModal">
@@ -171,6 +171,7 @@
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
+                            <button onclick="copyToClipboard('#rotban_url')" class="btn btn-primary" type="button">In Zwischenablage kopieren</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
 
@@ -178,8 +179,17 @@
                 </div>
             </div>
         </div>
-        <br>
-        <br>
+        <footer>
+            <div class="container">
+                <div class="container mt-5">
+                    <p class="text-sm-center">
+                        Service provided by VATSIM-Germany<br>
+                        Mail: events (at) vatsim-germany.org<br>
+                        Developed by Paul Hollmann
+                    </p>
+                </div>
+            </div>
+        </footer>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!--<script src="assets/js/bs-init.js"></script>-->
