@@ -7,8 +7,8 @@ $filter_airport = urldecode($_GET["airport"]);
 $background_datas = getBackgoundImageDataViaFilter($filter_rg, $filter_station, $filter_airport);
 if ($background_datas == false) {
 ?>
-    <div class="col-auto align-items-center align-middle">
-        <span class="badge badge-dark">No images found</span>
+    <div class="col-auto">
+        <span class="badge badge-dark">Keine Hintergrundbilder gefunden</span>
     </div>
     <?php
 } else {
