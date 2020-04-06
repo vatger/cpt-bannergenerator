@@ -1,6 +1,6 @@
 // VATGER CPT Bannergenerator (JQUERY) JAVASCRIPT by Paul Hollmann
 
-//################################## THE IMAGE PREDISPLAY ####################################
+//################################## THE IMAGE SELECTION ####################################
 //function for the predisplay
 function predisplay() {
     $("#form_bg").val("---");
@@ -34,11 +34,13 @@ function predisplay() {
         });
     });
 }
-//load the predisplay
-predisplay();
-$("#background_img_button").click(function () {
+//load on finish
+$(document).ready(function () {
     predisplay();
-    templatedisplay();
+    $("#background_img_button").click(function () {
+        predisplay();
+        templatedisplay();
+    });
 });
 //################################## END OF SECTION ##########################################
 
@@ -76,9 +78,15 @@ function templatedisplay() {
 }
 //################################## END OF SECTION ##########################################
 
+//################################## THE TEMPLATE SELECTION ##################################
 //set the button action
-$("#button").click(function (event) {
-    var data = $("#input").serialize();
-    $("#outputlink").html($(location).attr("origin") + "/gen.php?" + data);
-    $("#preview_img").attr("src", "gen.php?" + data);
+$(document).ready(function () {
+    $("#button").click(function (event) {
+        var data = $("#input").serialize();
+        $("#outputlink").val($(location).attr("origin") + "/gen.php?" + data);
+        $("#preview_img").attr("src", "gen.php?" + data);
+    });
 });
+
+//################################## END OF SECTION ##########################################
+
