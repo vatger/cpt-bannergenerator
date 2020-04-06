@@ -69,6 +69,7 @@ function templatedisplay() {
                     $(this).children("img").addClass("border");
                     $(this).children("img").addClass("border-success");
                     $("#form_tp").val(parseInt($(this).children("img").attr("data-templateid")));
+                    $("#warnings").empty();
                 });
                 $(this).css("pointer-events: none;");
                 $(this).tooltip({ selector: '[data-toggle=tooltip]', relative: true });
@@ -81,13 +82,13 @@ function templatedisplay() {
 //################################## THE MODAL SELECTION ##################################
 //set the button action
 $(document).ready(function () {
-    $("#button").click(function (event) {
+    $("#button").click(function () {
         if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---") {
             if ($("#form_bg").val() == "---") {
-                
+                $("#warnings").append("<span class='badge badge-warning'>Kein Hintergrundbild ausgewählt</span><br>");
             }
             if ($("#form_tp").val() == "---") {
-                
+                $("#warnings").append("<span class='badge badge-warning'>Keine Vorlage ausgewählt</span><br>");
             }
         } else {
             var data = $("#input").serialize();
