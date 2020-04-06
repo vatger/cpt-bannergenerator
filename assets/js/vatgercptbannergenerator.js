@@ -40,6 +40,7 @@ $(document).ready(function () {
     $("#background_img_button").click(function () {
         predisplay();
         templatedisplay();
+        $("#background_image_display").html("<div class='col-auto'><span class='badge badge-dark'>Wähle erst ein Hintergrundbild</span></div>");
     });
 });
 //################################## END OF SECTION ##########################################
