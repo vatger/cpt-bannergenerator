@@ -83,6 +83,7 @@ function templatedisplay() {
 //set the button action
 $(document).ready(function () {
     $("#button").click(function () {
+        $("#warnings").empty();
         if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---") {
             if ($("#form_bg").val() == "---") {
                 $("#warnings").append("<span class='badge badge-warning'>Kein Hintergrundbild ausgewählt</span><br>");
