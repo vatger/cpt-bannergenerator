@@ -82,9 +82,19 @@ function templatedisplay() {
 //set the button action
 $(document).ready(function () {
     $("#button").click(function (event) {
-        var data = $("#input").serialize();
-        $("#outputlink").val($(location).attr("origin") + "/gen.php?" + data);
-        $("#preview_img").attr("src", "gen.php?" + data);
+        if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---") {
+            if ($("#form_bg").val() == "---") {
+                alert("No bg");
+            }
+            if ($("#form_tp").val() == "---") {
+                alert("No tp");
+            }
+        } else {
+            var data = $("#input").serialize();
+            $("#outputlink").val($(location).attr("origin") + "/gen.php?" + data);
+            $("#preview_img").attr("src", "gen.php?" + data);
+
+        }
     });
 });
 function copyToClipboard(elementId) {
