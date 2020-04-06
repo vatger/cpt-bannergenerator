@@ -12,7 +12,6 @@ $template_id = urldecode($_GET["tp"]);
 if(intval($template_id) == 0)
     $params_valid = false;
 $traineename = urldecode($_GET["tn"]);
-$traineename = urldecode($_GET["tn"]);
 $stationcallsign = urldecode($_GET["sc"]);
 $stationname = urldecode($_GET["sn"]);
 $date = urldecode($_GET["dt"]);
