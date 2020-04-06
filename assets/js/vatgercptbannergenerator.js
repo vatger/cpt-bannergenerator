@@ -84,10 +84,10 @@ $(document).ready(function () {
     $("#button").click(function (event) {
         if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---") {
             if ($("#form_bg").val() == "---") {
-                alert("No bg");
+                
             }
             if ($("#form_tp").val() == "---") {
-                alert("No tp");
+                
             }
         } else {
             var data = $("#input").serialize();
