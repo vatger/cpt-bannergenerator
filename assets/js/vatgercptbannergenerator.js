@@ -70,7 +70,7 @@ function templatedisplay() {
                     $(this).children("img").addClass("border");
                     $(this).children("img").addClass("border-success");
                     $("#form_tp").val(parseInt($(this).children("img").attr("data-templateid")));
-                    $("#warnings").empty();
+                    $("#warnings_show_image").empty();
                 });
                 $(this).css("pointer-events: none;");
                 $(this).tooltip({ selector: '[data-toggle=tooltip]', relative: true });
@@ -83,14 +83,14 @@ function templatedisplay() {
 //################################## THE MODAL SELECTION ##################################
 //set the button action
 $(document).ready(function () {
-    $("#button").click(function () {
-        $("#warnings").empty();
+    $("#button_show_image").click(function () {
+        $("#warnings_show_image").empty();
         if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---") {
             if ($("#form_bg").val() == "---") {
-                $("#warnings").append("<span class='badge badge-warning'>Kein Hintergrundbild ausgewählt</span><br>");
+                $("#warnings_show_image").append("<span class='badge badge-warning'>Kein Hintergrundbild ausgewählt</span><br>");
             }
             if ($("#form_tp").val() == "---") {
-                $("#warnings").append("<span class='badge badge-warning'>Keine Vorlage ausgewählt</span><br>");
+                $("#warnings_show_image").append("<span class='badge badge-warning'>Keine Vorlage ausgewählt</span><br>");
             }
         } else {
             var data = $("#input").serialize();
@@ -99,8 +99,14 @@ $(document).ready(function () {
             $("#image_result").modal();
         }
     });
+    $("#button_gen_forum").click(function () {
+        $("#warnings_gen_forum").empty();
+        $("#warnings_gen_forum").append("<span class='badge badge-info'>Kommt noch</span><br>");
+    });
 });
 
+
+button_gen_forum
 function copyToClipboard(elementId) {
     var copyText = document.getElementById(elementId);
     copyText.select();
