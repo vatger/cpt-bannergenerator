@@ -6,7 +6,7 @@ $templates = getCompatibleTemplateIds($filter_backgroundimage);
 if ($templates == false) {
 ?>
     <div class="col-auto">
-        <span class="badge badge-dark">Keine Vorlagen passen zum Hintergrundbild</span>
+        <span class="badge badge-dark">Wähle erst ein Hintergrundbild</span>
     </div>
     <?php
 } else {
