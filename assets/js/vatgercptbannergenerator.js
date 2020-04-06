@@ -87,6 +87,13 @@ $(document).ready(function () {
         $("#preview_img").attr("src", "gen.php?" + data);
     });
 });
+function copyToClipboard(element) {
+    var copyText = $(element);
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+    document.execCommand("copy");
+
+}
 
 //################################## END OF SECTION ##########################################
 
