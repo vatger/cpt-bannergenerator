@@ -37,7 +37,6 @@ function predisplay() {
 //load on finish
 $(document).ready(function () {
     predisplay();
-    $("#background_image_display").html("<div class='col-auto'><span class='badge badge-dark'>Wähle erst ein Hintergrundbild</span></div>");
     $("#background_img_button").click(function () {
         predisplay();
         templatedisplay();
