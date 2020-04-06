@@ -87,8 +87,8 @@ $(document).ready(function () {
         $("#preview_img").attr("src", "gen.php?" + data);
     });
 });
-function copyToClipboard(element) {
-    var copyText = $(element);
+function copyToClipboard(elementId) {
+    var copyText = document.getElementById(elementId);
     copyText.select();
     copyText.setSelectionRange(0, 99999); /*For mobile devices*/
     document.execCommand("copy");
