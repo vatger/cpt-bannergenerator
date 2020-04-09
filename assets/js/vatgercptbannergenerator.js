@@ -15,7 +15,7 @@ function predisplay() {
                 });
                 $(this).on("background_image_selected", function () {
                     $(this).children("img").removeClass("border");
-                    $(this).children("img").removeClass("border-success");
+                    $(this).children("img").removeClass("border-secondary");
                     $(this).children("img").removeClass("img-thumbnail");
                 });
                 $(this).click(function () {
@@ -24,7 +24,7 @@ function predisplay() {
                     });
                     $(this).children("img").addClass("img-thumbnail");
                     $(this).children("img").addClass("border");
-                    $(this).children("img").addClass("border-success");
+                    $(this).children("img").addClass("border-secondary");
                     $("#form_bg").val(parseInt($(this).children("img").attr("data-imageid")));
                     templatedisplay();
                 });
