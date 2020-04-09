@@ -49,7 +49,7 @@ function getBackgoundImageDataViaFilter($rg, $station, $airport)
 function getBackgoundImageContent($background_image_id)
 {
     $background_image_id = esc_str($background_image_id);
-    return query_row("SELECT id, content FROM background_image WHERE id LIKE " . $background_image_id);
+    return query_row("SELECT id, imageformat, content FROM background_image WHERE id LIKE " . $background_image_id);
 }
 
 function getBackgoundImageAttributes($background_image_id)
