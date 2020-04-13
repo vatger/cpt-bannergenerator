@@ -82,7 +82,6 @@ function templatedisplay() {
 //################################## THE MODAL SELECTION ##################################
 //set the button action
 $(document).ready(function () {
-    $("#input").validator();
     $("#button_show_image").click(function () {
         $("#warnings_show_image").empty();
         if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---"|| !$("#input").valid()) {
