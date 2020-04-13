@@ -82,15 +82,20 @@ function templatedisplay() {
 //################################## THE MODAL SELECTION ##################################
 //set the button action
 $(document).ready(function () {
+    $("#input").validator();
     $("#button_show_image").click(function () {
         $("#warnings_show_image").empty();
-        if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---") {
+        if ($("#form_bg").val() == "---" || $("#form_tp").val() == "---"|| !$("#input").valid()) {
             if ($("#form_bg").val() == "---") {
                 $("#warnings_show_image").append("<span class='badge badge-warning'>Kein Hintergrundbild ausgewählt</span><br>");
             }
             if ($("#form_tp").val() == "---") {
                 $("#warnings_show_image").append("<span class='badge badge-warning'>Keine Vorlage ausgewählt</span><br>");
             }
+            if (!$("#input").valid()){
+                $("#warnings_show_image").append("<span class='badge badge-warning'>Nicht alle Textfelder ausgefüllt</span><br>");
+            }
+
         } else {
             var data = $("#input").serialize();
             $("#outputlink").val($(location).attr("origin") + "/gen.php?" + data);
@@ -105,7 +110,7 @@ $(document).ready(function () {
 });
 
 
-button_gen_forum
+
 function copyToClipboard(elementId) {
     var copyText = document.getElementById(elementId);
     copyText.select();
