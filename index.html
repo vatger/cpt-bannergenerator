@@ -100,7 +100,7 @@
                         <label for="sc">Stationscallsign</label>
                     </div>
                     <div class="col-auto">
-                        <input class="form-control" type="text" name="sc" maxlength="10" required placeholder="EDXX_X_TWR">
+                        <input class="form-control" type="text" name="sc" maxlength="10"  pattern="\w\w\w\w(_\w)?_(TWR)|(APP)|(CTR)" required placeholder="EDXX_X_TWR">
                     </div>
                 </div>
                 <div class="row">
@@ -124,7 +124,7 @@
                         <label for="dt">Datum</label>
                     </div>
                     <div class="col-auto">
-                        <input class="form-control" type="text" name="dt" maxlength="10" required value="00.00.0000">
+                        <input class="form-control" type="text" name="dt" maxlength="10" pattern="\d\d.\d\d.\d\d\d\d" required value="00.00.0000">
                     </div>
                 </div>
                 <div class="row">
@@ -132,7 +132,7 @@
                         <label for="ts">Startzeit</label>
                     </div>
                     <div class="col-auto">
-                        <input class="form-control" type="text" name="ts" maxlength="4" required placeholder="1800">
+                        <input class="form-control" type="text" name="ts" maxlength="4" pattern="\d\d\d\d" required placeholder="1800">
                     </div>
                 </div>
                 <div class="row">
@@ -140,7 +140,7 @@
                         <label for="te">Endzeit</label>
                     </div>
                     <div class="col-auto">
-                        <input class="form-control" type="text" name="te" maxlength="4" required placeholder="1900">
+                        <input class="form-control" type="text" name="te" maxlength="4" pattern="\d\d\d\d" required placeholder="1900">
                     </div>
                 </div>
                 <div class="row">
