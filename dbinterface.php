@@ -39,7 +39,7 @@ function getBackgoundImageDataViaFilter($rg, $station, $airport)
     $station = esc_str($station);
     $airport = esc_str($airport);
     $querystr = "SELECT id, regional_group, station, airport, activated FROM background_image 
-    WHERE `activated` LIKE '1'
+    WHERE `activated` LIKE 'yes'
     AND `regional_group` LIKE '%" . $rg . "%'
     AND `station` LIKE '%" . $station . "%'";
     if (!empty($airport))
