@@ -1,225 +1,216 @@
 <!DOCTYPE html>
 <html lang="de">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VATSIM Germany - Bannergenerator</title>
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">-->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VATSIM Germany - Bannergenerator</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">-->
+</head>
 
-    <body>
-        <div class="bg-dark">
-            <div class="container pt-5 pb-5">
-                <a href="">
-                    <img class="w-50" src="assets/img/vacc_logo_white.png">
-                </a>
+<body class="bg-dark">
+<div style="background-color: #585d63">
+    <div class="container pb-4 pt-4">
+        <img class="w-25 h-25" src="assets/img/vacc_logo_white.png" alt="Logo">
+    </div>
+</div>
+<div class="container mt-4">
+    <h1 class="text-white-50">CPT Bannergenerator</h1>
+</div>
+<div class="container mt-5">
+    <h2 class="text-white-50">Wähle ein Hintergrundbild</h2>
+    <h6 class="text-success" id="in"></h6>
+    <form class="form-inline" id="img_form" action="javascript:void(0);">
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2 text-white" for="img_rg">Regionalgruppe</label>
+                <select class="custom-select mr-sm-2" name="rg">
+                    <option value="%" selected>Alle</option>
+                    <option value="EDFF">RG EDFF</option>
+                    <option value="EDLL">RG EDLL</option>
+                    <option value="EDLL">RG EDBB</option>
+                    <option value="EDLL">RG EDWW</option>
+                    <option value="EDLL">RG EDMM</option>
+                    <option value="PREVENTS">PR &amp; Events</option>
+                </select>
             </div>
         </div>
-        <div class="container mt-4">
-            <h1 class="text">CPT Bannergenerator</h1>
-            <p class="text">
-                1. Wähle durch Klick ein Hintergrundbild<br>
-                2. Wähle eine Vorlage aus<br>
-                3. Passe die Textbausteine auf dem Bild an<br>
-                4. Lasse dir eine Vorschau generieren, kopiere den Link oder erstelle eine andere Kombination<br>
-                5. (Optional: Lasse dir einen kompletten Forumspost erstellen)
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2 text-white" for="img_sta">Station</label>
+                <select class="custom-select mr-sm-2" name="station">
+                    <option value="%" selected>Alle</option>
+                    <option value="TWR">TWR</option>
+                    <option value="APP">APP</option>
+                    <option value="CTR">CTR</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2 text-white" for="img_icao">Airport ICAO</label>
+                <input type="text" class="form-control text-center mr-sm-2" name="airport" maxlength="4">
+            </div>
+        </div>
+
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="img_button">
+                    <br>
+                </label>
+                <button class="form-control" id="background_img_button">Bilder schnappen</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<div class="container overflow-auto" style="max-height: 40vh;">
+    <div class="row mt-2" id="background_image_display">
+        <div class="col-auto align-items-center align-middle">
+            <span class="badge badge-light">Waiting</span>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container mt-5">
+    <h2 class="text-white-50">Wähle eine Vorlage</h2>
+</div>
+<div class="container overflow-auto" style="max-height: 20vh;">
+    <div class="row mt-2" id="template_image_display">
+        <div class="col-auto">
+            <span class="badge badge-light">Wähle erst ein Hintergrundbild</span>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2 class="text-white-50">Bannertext</h2>
+    <form id="input" action="">
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="sc">Stationscallsign</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" name="sc" maxlength="10"  pattern="\w\w\w\w(_\w)?_(TWR)|(APP)|(CTR)" required placeholder="EDXX_X_TWR">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="sn">Stationsname</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" name="sn" maxlength="20" required placeholder="XXX Tower">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="tn">Traineename</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" name="tn" maxlength="25" required placeholder="Max Mustertrainee">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="dt">Datum</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" name="dt" maxlength="10" pattern="\d\d.\d\d.\d\d\d\d" required value="00.00.0000">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="ts">Startzeit</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" name="ts" maxlength="4" pattern="\d\d\d\d" required placeholder="1800">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="te">Endzeit</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" name="te" maxlength="4" pattern="\d\d\d\d" required placeholder="1900">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="bg">background_image_id</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" readonly id="form_bg" name="bg" value="---">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label class="text-white" for="tp">template_id</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" readonly id="form_tp" name="tp" value="---">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container mt-5">
+    <div class="row mt-2">
+        <div class="col-3">
+            <button id="button_show_image" type="button" class="btn btn-secondary">
+                Banner anzeigen
+            </button>
+        </div>
+        <div class="col-auto" id="warnings_show_image">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-3">
+            <button id="button_gen_forum" type="button" class="btn btn-secondary">
+                Forumstext generieren
+            </button>
+        </div>
+        <div class="col-auto" id="warnings_gen_forum">
+        </div>
+    </div>
+    <div class="modal" id="image_result">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Banner erstellt</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <img id="preview_img" class="img-fluid mx-auto d-block" src="">
+                    </div>
+                    <div class="mt-2">
+                        <label for="outputlink">Link:</label>
+                        <input id="outputlink" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="copyToClipboard('outputlink');" class="btn btn-primary" type="button">In
+                        Zwischenablage kopieren</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="wrapper flex-grow-1">
+    <div class="col" style="background-color: #585d63">
+        <div class="container mt-5 pt-5 pb-3">
+            <p class="text-sm-center text-white">Service provided by VATSIM-Germany</p>
+            <p class="text-sm-center text-white">Mail:
+                <a class="text-white" href="mailto:events@vatsim-germany.org"> events (at) vatsim-germany.org</a>
             </p>
+            <p class="text-sm-center text-white">Developed by Paul Hollmann</p>
         </div>
-        <div class="container mt-5">
-            <h2>Wähle ein Hintergrundbild</h2>
-            <h6 class="text-success" id="in"></h6>
-            <form class="form-inline" id="img_form" action="javascript:void(0);">
-                <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2" for="img_rg">Regionalgruppe</label>
-                        <select class="custom-select mr-sm-2" name="rg">
-                            <option value="%" selected>Alle</option>
-                            <option value="EDFF">RG EDFF</option>
-                            <option value="EDLL">RG EDLL</option>
-                            <option value="EDLL">RG EDBB</option>
-                            <option value="EDLL">RG EDWW</option>
-                            <option value="EDLL">RG EDMM</option>
-                            <option value="PREVENTS">PR &amp; Events</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2" for="img_sta">Station</label>
-                        <select class="custom-select mr-sm-2" name="station">
-                            <option value="%" selected>Alle</option>
-                            <option value="TWR">TWR</option>
-                            <option value="APP">APP</option>
-                            <option value="CTR">CTR</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2" for="img_icao">Airport ICAO</label>
-                        <input type="text" class="form-control text-center mr-sm-2" name="airport" maxlength="4">
-                    </div>
-                </div>
-
-                <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2" for="img_button">
-                            <br>
-                        </label>
-                        <button class="form-control" id="background_img_button">Bilder schnappen</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <br>
-        <div class="container overflow-auto" style="max-height: 40vh;">
-            <div class="row mt-2" id="background_image_display">
-                <div class="col-auto align-items-center align-middle">
-                    <span class="badge badge-dark">Waiting</span>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="container mt-5">
-            <h2>Wähle eine Vorlage</h2>
-        </div>
-        <div class="container overflow-auto" style="max-height: 20vh;">
-            <div class="row mt-2" id="template_image_display">
-                <div class="col-auto">
-                    <span class="badge badge-dark">Wähle erst ein Hintergrundbild</span>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-5">
-            <h2>Bannertext</h2>
-            <form id="input" action="">
-                <div class="row">
-                    <div class="col-2">
-                        <label for="sc">Stationscallsign</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" name="sc" maxlength="10"  pattern="\w\w\w\w(_\w)?_(TWR)|(APP)|(CTR)" required placeholder="EDXX_X_TWR">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="sn">Stationsname</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" name="sn" maxlength="20" required placeholder="XXX Tower">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="tn">Traineename</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" name="tn" maxlength="25" required placeholder="Max Mustertrainee">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="dt">Datum</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" name="dt" maxlength="10" pattern="\d\d.\d\d.\d\d\d\d" required value="00.00.0000">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="ts">Startzeit</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" name="ts" maxlength="4" pattern="\d\d\d\d" required placeholder="1800">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="te">Endzeit</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" name="te" maxlength="4" pattern="\d\d\d\d" required placeholder="1900">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="bg">background_image_id</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" readonly id="form_bg" name="bg" value="---">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="tp">template_id</label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="form-control" type="text" readonly id="form_tp" name="tp" value="---">
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="container mt-5">
-            <div class="row mt-2">
-                <div class="col-3">
-                    <button id="button_show_image" type="button" class="btn btn-secondary">
-                        Banner anzeigen
-                    </button>
-                </div>
-                <div class="col-auto" id="warnings_show_image">
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col-3">
-                    <button id="button_gen_forum" type="button" class="btn btn-secondary">
-                        Forumstext generieren
-                    </button>
-                </div>
-                <div class="col-auto" id="warnings_gen_forum">
-                </div>
-            </div>
-            <div class="modal" id="image_result">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Banner erstellt</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="">
-                                <img id="preview_img" class="img-fluid mx-auto d-block" src="">
-                            </div>
-                            <div class="mt-2">
-                                <label for="outputlink">Link:</label>
-                                <input id="outputlink" class="form-control" readonly>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button onclick="copyToClipboard('outputlink');" class="btn btn-primary" type="button">In
-                                Zwischenablage kopieren</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="wrapper flex-grow-1">
-            <div class="col bg-dark">
-                <div class="container mt-5 pt-5 pb-3">
-                    <p class="text-sm-center text-white">Service provided by VATSIM-Germany</p>
-                    <p class="text-sm-center text-white">Mail:
-                        <a class="text-white" href="mailto:events@vatsim-germany.org"> events (at) vatsim-germany.org</a>
-                    </p>
-                    <p class="text-sm-center text-white">Developed by Paul Hollmann</p>
-                </div>
-            </div>
-        </footer>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.validate.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/vatgercptbannergenerator.js"></script>
-    </body>
+    </div>
+</footer>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vatgercptbannergenerator.js"></script>
+</body>
 
 </html>
