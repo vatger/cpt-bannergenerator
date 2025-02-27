@@ -14,7 +14,7 @@ if ($background_datas == false) {
 } else {
     foreach ($background_datas as $background_data) {
         $id = $background_data["id"];
-        $rg = $background_data["rg"];
+        $rg = $background_data["regional_group"];
         $station = $background_data["station"];
         $airport = $background_data["airport"];
     ?>
